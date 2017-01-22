@@ -24,9 +24,9 @@
 					<h4 class="card-title">Workers</h4>
 				</div>
 				<div class="list-group list-group-flush">
-					<a href="{{ url('/worker/new') }}" class="list-group-item list-group-item-action">New Worker</a>
-					<a href="{{ url('/worker/input/new') }}" class="list-group-item list-group-item-action">New Worker Input</a>
-					<a href="{{ url('/worker/report/new') }}" class="list-group-item list-group-item-action">New Worker Report</a>
+					<a href="{{ url('/workers/new') }}" class="list-group-item list-group-item-action">New Worker</a>
+					<a href="{{ url('/workers/new/input') }}" class="list-group-item list-group-item-action">New Worker Input</a>
+					<a href="{{ url('/workers/new/report') }}" class="list-group-item list-group-item-action">New Worker Report</a>
 					<a href="{{ url('/workers') }}" class="list-group-item list-group-item-action">View All Workers</a> 
 				</div>
 			</div>
@@ -36,10 +36,10 @@
 					<h4 class="card-title">Agents</h4>
 				</div>
 				<div class="list-group list-group-flush">
-					<a href="{{ url('/agent/new') }}" class="list-group-item list-group-item-action">New Agent</a>
+					<a href="{{ url('/agents/new') }}" class="list-group-item list-group-item-action">New Agent</a>
 					<a href="{{ url('/agents') }}" class="list-group-item list-group-item-action">View All Agents</a>
-					<a href="{{ url('/agent/account/new') }}" class="list-group-item list-group-item-action">Agent Accounts</a>
-					<a href="{{ url('/agents/accounts') }}" class="list-group-item list-group-item-action">View All Accounts</a>
+					<a href="{{ url('/agents/accounts/new') }}" class="list-group-item list-group-item-action">Agent Accounts</a>
+					<a href="{{ url('/agents/accountss') }}" class="list-group-item list-group-item-action">View All Accounts</a>
 				</div>
 			</div>
 		</div>

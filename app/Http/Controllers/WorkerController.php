@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Traits\HumanReadableID;
+use App\Worker;
+use Illuminate\Http\Request;
+
+class WorkerController extends Controller
+{
+
+	public function __construct(){
+		$this->middleware('auth');
+	}
+
+	/**
+	 *  Store New Worker info
+	 * into the database
+	 *
+	 */
+
+	use HumanReadableID;
+
+	public function index(){
+
+		$data['workers'] = (new Worker())->orderBy('id', 'desc')->get();
+		return view('worker.list', $data);
+	}
+
+    public function store (Request $req){
+    	
+		$validImageFormats = ['png', 'jpg', 'jpeg'];
+
+    	$worker = new Worker;
+    	
+    	$worker->name = strtoupper($req->name);
+		$worker->husband_or_father = strtoupper($req->husband_or_father);
+		$worker->nationality = strtoupper($req->nationality);
+		$worker->dob = strtoupper($req->dob);
+		$worker->present_address = strtoupper($req->present_address);
+		$worker->permanent_address = strtoupper($req->permanent_address);
+		$worker->mobile_no = strtoupper($req->mobile_no);
+		$worker->family_mobile_no = strtoupper($req->family_mobile_no);
+		$worker->voter_id_no = strtoupper($req->voter_id_no);
+		$worker->passport_no = strtoupper($req->passport_no);
+		$worker->passport_issue_date = strtoupper($req->passport_issue_date);
+		$worker->passport_expiry_date = strtoupper($req->passport_expiry_date);
+		if ($req->hasFile('passport_scan_copy') 
+			&& $req->file('passport_scan_copy')->isValid() 
+			&& in_array(strtolower($req->passport_scan_copy->extension()), $validImageFormats)) {
+			$worker->passport_scan_copy = $req->passport_scan_copy->store('images');
+		}
+		if ($req->hasFile('photo') 
+			&& $req->file('photo')->isValid()
+			&& in_array(strtolower($req->photo->extension()), $validImageFormats)) {
+			$worker->photo = $req->photo->store('images');
+		}
+		$worker->experience_details = strtoupper($req->experience_details);
+		$worker->save();
+
+		$worker->sid = $this->generate($worker->id);
+		$worker->save();
+
+		return redirect("/workers/{$worker->sid}");
+
+    }
+
+    public function show($id)
+    {
+
+	   	$data['worker'] = (new Worker())->where('sid', $id)->first();
+	   	$data['edit_url'] = url("/workers/{$id}/edit");
+	   	if ($data['worker']) {
+	    	return view('worker.view', $data);
+	   	}else{
+	   		return redirect('workers');
+	   	}
+
+    }
+
+
+
+}

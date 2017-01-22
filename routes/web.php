@@ -27,36 +27,34 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'],function(){
 
-	Route::get('/workers', function(){
-		return view('worker.list');
-	});
-	Route::get('/worker/new', function(){
+	Route::get('/workers', 'WorkerController@index');
+	Route::get('/workers/new', function(){
 		return view('worker.new');
 	});
-	Route::get('/worker/input/new', function(){
+	Route::post('/workers/new', 'WorkerController@store');
+	
+	Route::get('/workers/new/input', function(){
 		return view('worker.input');
 	});
-	Route::get('/worker/report/new', function(){
+	Route::get('/workers/new/report', function(){
 		return view('worker.report');
 	});
-	Route::get('/worker/edit/{id}', function($id){
+	Route::get('/workers/{id}/edit', function($id){
 		return view('worker.edit');
 	});
-	Route::get('/worker/view/{id}', function($id){
-		return view('worker.view');
-	});
+	Route::get('/workers/{id}', 'WorkerController@show');
 
 
 	Route::get('/agents', function(){
 		return view('agent.list');
 	});
-	Route::get('/agent/new', function(){
+	Route::get('/agents/new', function(){
 		return view('agent.new');
 	});
-	Route::get('/agent/edit/{id}', function($id){
+	Route::get('/agents/{id}/edit', function($id){
 		return view('agent.edit');
 	});
-	Route::get('/agent/view/{id}', function($id){
+	Route::get('/agents/{id}/view', function($id){
 		return view('agent.view');
 	});
 
@@ -64,13 +62,13 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/agents/accounts', function(){
 		return view('agent.account.list');
 	});
-	Route::get('/agent/account/new', function(){
+	Route::get('/agents/accounts/new', function(){
 		return view('agent.account.new');
 	});
-	Route::get('/agent/account/edit/{id}', function($id){
+	Route::get('/agents/accounts/{id}/edit', function($id){
 		return view('agent.account.edit');
 	});
-	Route::get('/agent/account/view/{id}', function($id){
+	Route::get('/agents/accounts/{id}/view', function($id){
 		return view('agent.account.view');
 	});
 

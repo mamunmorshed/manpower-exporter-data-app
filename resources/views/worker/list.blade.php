@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 			<div class="row">
 				<div class="col-md-8">
 					<h3>All Workers</h3>
@@ -16,7 +17,7 @@
 			</div>
 			
 			<br>
-
+		@if(count($workers))
 			<table class="table table-hover">
 			  <thead>
 			    <tr>
@@ -27,144 +28,20 @@
 			    </tr>
 			  </thead>
 			  <tbody>
+			  @foreach($workers as $worker)
 			    <tr>
-			      <th scope="row">W0001</th>
-			      <td>MARK</td>
-			      <td>OTTO</td>
+			      <th scope="row">{{ $worker->sid }}</th>
+			      <td>{{ $worker->name }}</td>
+			      <td>{{ $worker->passport_no }}</td>
 			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
+			      	<a href="{{ url('/workers/'.$worker->sid) }}" class="btn btn-sm btn-info">View</a>
+			      	<a href="{{ url('/workers/'.$worker->sid.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
 			      </td>
 			    </tr>
-			    <tr>
-			      <th scope="row">W0002</th>
-			      <td>JACOB</td>
-			      <td>THORNTON</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0003</th>
-			      <td>LARRY THE BIRD</td>
-			      <td>LARRY THE BIRD</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0004</th>
-			      <td>MARK</td>
-			      <td>OTTO</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0005</th>
-			      <td>JACOB</td>
-			      <td>THORNTON</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0006</th>
-			      <td>LARRY THE BIRD</td>
-			      <td>LARRY THE BIRD</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0007</th>
-			      <td>MARK</td>
-			      <td>OTTO</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0008</th>
-			      <td>JACOB</td>
-			      <td>THORNTON</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0009</th>
-			      <td>LARRY THE BIRD</td>
-			      <td>LARRY THE BIRD</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0010</th>
-			      <td>MARK</td>
-			      <td>OTTO</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0011</th>
-			      <td>JACOB</td>
-			      <td>THORNTON</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0012</th>
-			      <td>LARRY THE BIRD</td>
-			      <td>LARRY THE BIRD</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0013</th>
-			      <td>MARK</td>
-			      <td>OTTO</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0014</th>
-			      <td>JACOB</td>
-			      <td>THORNTON</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">W0015</th>
-			      <td>LARRY THE BIRD</td>
-			      <td>LARRY THE BIRD</td>
-			      <td>
-			      	<a href="worker-view.php" class="btn btn-sm btn-info">View</a>
-			      	<a href="worker-edit.php" class="btn btn-sm btn-warning">Edit</a>
-			      </td>
-			    </tr>
+			    @endforeach
 			  </tbody>
 			</table>
-
+		@endif
 
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination ">
