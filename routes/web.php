@@ -33,7 +33,9 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/workers/new/input', 'WorkerController@createInput');
 	Route::get('/workers/new/report', 'WorkerController@createReport');
 	Route::get('/workers/{id}/edit', 'WorkerController@edit');
+	Route::patch('/workers/{id}/edit', 'WorkerController@update');
 	Route::get('/workers/{id}', 'WorkerController@show');
+	Route::get('/workers/{id}/json', 'WorkerController@showJSON');
 
 
 	Route::get('/agents', function(){

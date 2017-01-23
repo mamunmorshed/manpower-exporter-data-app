@@ -59,6 +59,7 @@
 <script src="{{ asset('js/tether.js')}}"></script>
 <script src="{{ asset('js/bootstrap.js')}}"></script>
 <script src="{{ asset('js/script.js')}}"></script>
+@stack('scripts_footer')
 
 </body>
 </html>

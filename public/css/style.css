@@ -1,3 +1,7 @@
 input{
 	text-transform: UPPERCASE;
 }
+
+#worker-input-form{
+	transition: 0.4s all ease;
+}
