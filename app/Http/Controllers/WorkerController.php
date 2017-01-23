@@ -27,6 +27,18 @@ class WorkerController extends Controller
 		return view('worker.list', $data);
 	}
 
+	public function create(){
+		return view('worker.new');
+	}
+
+	public function createInput(){
+		return view('worker.input');
+	}
+
+	public function createReport(){
+		return view('worker.report');
+	}
+
     public function store (Request $req){
     	
 		$validImageFormats = ['png', 'jpg', 'jpeg'];
@@ -72,6 +84,19 @@ class WorkerController extends Controller
 	   	$data['edit_url'] = url("/workers/{$id}/edit");
 	   	if ($data['worker']) {
 	    	return view('worker.view', $data);
+	   	}else{
+	   		return redirect('workers');
+	   	}
+
+    }
+
+    public function edit($id)
+    {
+
+	   	$data['worker'] = (new Worker())->where('sid', $id)->first();
+
+	   	if ($data['worker']) {
+	    	return view('worker.edit', $data);
 	   	}else{
 	   		return redirect('workers');
 	   	}

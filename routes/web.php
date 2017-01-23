@@ -28,20 +28,11 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => 'auth'],function(){
 
 	Route::get('/workers', 'WorkerController@index');
-	Route::get('/workers/new', function(){
-		return view('worker.new');
-	});
+	Route::get('/workers/new', 'WorkerController@create');
 	Route::post('/workers/new', 'WorkerController@store');
-	
-	Route::get('/workers/new/input', function(){
-		return view('worker.input');
-	});
-	Route::get('/workers/new/report', function(){
-		return view('worker.report');
-	});
-	Route::get('/workers/{id}/edit', function($id){
-		return view('worker.edit');
-	});
+	Route::get('/workers/new/input', 'WorkerController@createInput');
+	Route::get('/workers/new/report', 'WorkerController@createReport');
+	Route::get('/workers/{id}/edit', 'WorkerController@edit');
 	Route::get('/workers/{id}', 'WorkerController@show');
 
 

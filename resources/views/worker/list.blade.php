@@ -36,6 +36,7 @@
 			      <td>
 			      	<a href="{{ url('/workers/'.$worker->sid) }}" class="btn btn-sm btn-info">View</a>
 			      	<a href="{{ url('/workers/'.$worker->sid.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+			      	<a href="#" class="btn btn-sm btn-danger">Delete</a>
 			      </td>
 			    </tr>
 			    @endforeach

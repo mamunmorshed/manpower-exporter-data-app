@@ -37,6 +37,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -47,6 +48,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -57,6 +59,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -67,6 +70,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -77,6 +81,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -87,6 +92,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -97,6 +103,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -107,6 +114,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -117,6 +125,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -127,6 +136,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -137,6 +147,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -147,6 +158,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -157,6 +169,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -167,6 +180,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
@@ -177,6 +191,7 @@
 					      <td>
 					      	<a href="agent-view.php" class="btn btn-sm btn-info">View</a>
 					      	<a href="agent-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="agent-edit.php" class="btn btn-sm btn-danger">Delete</a>
 					      	<a href="worker-list.php" class="btn btn-sm btn-success">Workers</a>
 					      </td>
 					    </tr>
