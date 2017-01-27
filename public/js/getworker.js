@@ -14,6 +14,7 @@ $('#worker-login button').on('click', function(e){
 				$('input[name=worker_agency_in_bd]').val(data['agency_in_bd']);
 				$('input[name=worker_agency_abroad]').val(data['agency_abroad']);
 				$('input[name=worker_country]').val(data['country']);
+				$('input[name=worker_flight_date]').val(data['flight_date']);
 
 			});
 
