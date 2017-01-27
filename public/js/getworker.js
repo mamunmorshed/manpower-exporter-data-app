@@ -1,18 +1,19 @@
 $('#worker-login button').on('click', function(e){
 	e.preventDefault();
-	var workerId =  $('#worker-id').val().toUpperCase().trim();
+	var workerId =  $('#worker-sid').val().toUpperCase().trim();
 	if (workerId) {
 		var workerUrl = "/workers/"+workerId+"/json";
 		$.get( workerUrl, function( data ) {
 
-			$('#worker-login').fadeOut(function(){
-				$('#worker-id').attr("disabled", "disabled");
+			$('#login-block').fadeOut(function(){
 				$('#worker-input-form').removeClass('invisible');
-				$('input[name=agent-id]').val(data['agent-id']);
-				$('input[name=commission]').val(data['commission']);
-				$('input[name=agency_in_bd]').val(data['agency_in_bd']);
-				$('input[name=agency_abroad]').val(data['agency_abroad']);
-				$('input[name=country]').val(data['country']);
+				$('input[name=worker_id]').val(data['sid']);
+				$('input[name=worker_name]').val(data['name']);
+				$('input[name=worker_agent_id]').val(data['agent']);
+				$('input[name=worker_commission]').val(data['commission']);
+				$('input[name=worker_agency_in_bd]').val(data['agency_in_bd']);
+				$('input[name=worker_agency_abroad]').val(data['agency_abroad']);
+				$('input[name=worker_country]').val(data['country']);
 
 			});
 

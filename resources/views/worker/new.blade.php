@@ -108,6 +108,7 @@
 				  </div>
 				</div>
 				{{ csrf_field() }}
+				{{ method_field('POST') }}
 				<div class="form-group row">
 			      <div class="offset-sm-3 col-sm-9">
 				      <input type="submit" class="btn btn-success" value="Save">

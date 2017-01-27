@@ -6,6 +6,8 @@
 
 			<form method="post" enctype="multipart/form-data">
 
+			    <input type="hidden" value="{{ $worker->sid }}" name="sid">
+
 				<div class="form-group row">
 				  <label for="worker-agent-id" class="col-md-3 col-form-label">Agent ID</label>
 				  <div class="col-md-9">
@@ -17,7 +19,7 @@
 				<div class="form-group row">
 				  <label for="worker-name" class="col-md-3 col-form-label">Name</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="text" placeholder="Name" id="worker-name"  value="{{ $worker->name or '' }}" name="">
+				    <input class="form-control" type="text" placeholder="Name" id="worker-name"  value="{{ $worker->name or '' }}" name="name">
 				  </div>
 				</div>
 
@@ -139,54 +141,66 @@
 				  <div class="col-md-9">
 				    <input class="form-control" type="text" placeholder="Name of Country" id="worker-name-of-country"  value="{{ $worker->agent or '' }}" name="country">
 				  </div>
-				</div>
-
-				<div class="form-group row">
+				</div><div class="form-group row">
 				  <label for="worker-medical-report-copy" class="col-md-3 col-form-label">Medical Report Copy</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Medical Report Copy" id="worker-medical-report-copy"  value="{{ $worker->medical_report or '' }}" name="medical_report">
+				    <input class="form-control" type="file" placeholder="Medical Report Copy" id="worker-medical-report-copy" value="{{ $worker->medical_report or '' }}" name="worker_medical_report">
 				  </div>
 				</div>
 
 				<div class="form-group row">
 				  <label for="worker-training-report-copy" class="col-md-3 col-form-label">Training Report Copy</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Training Report Copy" id="worker-training-report-copy"  value="{{ $worker->training_report or '' }}" name="training_report">
+				    <input class="form-control" type="file" placeholder="Training Report Copy" id="worker-training-report-copy" value="{{ $worker->training_report or '' }}" name="worker_training_report">
+				  </div>
+				</div>
+
+				<div class="form-group row">
+				  <label for="worker-visa-copy" class="col-md-3 col-form-label">Visa Copy</label>
+				  <div class="col-md-9">
+				    <input class="form-control" type="file" placeholder="Visa Copy" id="worker-visa-copy" value="{{ $worker->visa_report or '' }}" name="worker_visa">
+				  </div>
+				</div>
+
+				<div class="form-group row">
+				  <label for="worker-attestion-copy" class="col-md-3 col-form-label">Attestion Copy</label>
+				  <div class="col-md-9">
+				    <input class="form-control" type="file" placeholder="Attestion Copy" id="worker-attestion-copy" value="{{ $worker->attestion or '' }}" name="worker_attestion">
 				  </div>
 				</div>
 
 				<div class="form-group row">
 				  <label for="worker-finger-report-copy" class="col-md-3 col-form-label">Finger Report Copy</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Finger Report Copy" id="worker-finger-report-copy"  value="{{ $worker->finger_report or '' }}" name="finger_report">
+				    <input class="form-control" type="file" placeholder="Finger Report Copy" id="worker-finger-report-copy" value="{{ $worker->finger_report or '' }}" name="worker_finger_report">
 				  </div>
 				</div>
 
 				<div class="form-group row">
 				  <label for="worker-man-power-report-copy" class="col-md-3 col-form-label">Man Power Report Copy</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Man Power Report Copy" id="worker-man-power-report-copy"  value="{{ $worker->man_power_report or '' }}" name="man_power_report">
+				    <input class="form-control" type="file" placeholder="Man Power Report Copy" id="worker-man-power-report-copy" value="{{ $worker->man_power_report or '' }}" name="worker_manpower_report">
 				  </div>
 				</div>
 
 				<div class="form-group row">
-				  <label for="worker-visa-number-visa-report-copy" class="col-md-3 col-form-label">Visa Copy</label>
+				  <label for="worker-flight-and-ticket-cpy" class="col-md-3 col-form-label">Flight &amp; Ticket Copy</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Visa Number &amp; Visa Report Copy" id="worker-visa-number-visa-report-copy"  value="{{ $worker->visa_report or '' }}" name="visa_report">
+				    <input class="form-control" type="file" placeholder="Flight &amp; Ticket Copy" id="worker-flight-and-ticket-cpy" value="{{ $worker->ticket or '' }}" name="worker_flight">
 				  </div>
 				</div>
 
 				<div class="form-group row">
-				  <label for="worker-attestion-number-ticket" class="col-md-3 col-form-label">Attestion Copy</label>
+				  <label for="worker-other-uploads" class="col-md-3 col-form-label">Other Uploads</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="file" placeholder="Attestion Number &amp; Ticket" id="worker-attestion-number-ticket"  value="{{ $worker->attestion_copy or '' }}" name="attestion_copy">
+				    <input class="form-control" type="file" placeholder="Other Uploads" id="worker-other-uploads" value="{{ $worker->other_uploads or '' }}" name="worker_other_uploads">
 				  </div>
 				</div>
 
 				<div class="form-group row">
-				  <label for="worker-date-of-flight-ticket" class="col-md-3 col-form-label">Date of Flight</label>
+				  <label for="worker-date-of-flight" class="col-md-3 col-form-label">Date of Flight</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Date of Flight &amp; Ticket" id="worker-date-of-flight-ticket"  value="{{ $worker->flight_date or '' }}" name="flight_date">
+				    <input class="form-control" type="date" placeholder="Date of Flight" id="worker-date-of-flight" value="{{ $worker->flight_date or '' }}" name="worker_flight_date">
 				  </div>
 				</div>
 

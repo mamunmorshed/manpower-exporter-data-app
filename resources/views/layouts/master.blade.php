@@ -26,7 +26,7 @@
 				<div class="list-group list-group-flush">
 					<a href="{{ url('/workers/new') }}" class="list-group-item list-group-item-action">New Worker</a>
 					<a href="{{ url('/workers/new/input') }}" class="list-group-item list-group-item-action">New Worker Input</a>
-					<a href="{{ url('/workers/new/report') }}" class="list-group-item list-group-item-action">New Worker Report</a>
+					<a href="{{ url('/workers/new/report') }}" class="list-group-item list-group-item-action">Existing Worker</a>
 					<a href="{{ url('/workers') }}" class="list-group-item list-group-item-action">View All Workers</a> 
 				</div>
 			</div>

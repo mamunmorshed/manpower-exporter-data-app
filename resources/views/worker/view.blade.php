@@ -58,7 +58,7 @@
 				@endif
 
 				@if($worker->passport_expiry_date)
-				<tr><td>sport Expiry Date</td><td>{{ $worker->passport_expiry_date }}</td></tr>
+				<tr><td>Passport Expiry Date</td><td>{{ $worker->passport_expiry_date }}</td></tr>
 				@endif
 
 				@if($worker->passport_scan_copy)
@@ -73,6 +73,10 @@
 				<tr><td>Experience Time &amp; Country</td><td>{{ $worker->experience_details }}</td></tr>
 				@endif
 
+				@if($worker->commission)
+				<tr><td>Commission</td><td>{{ $worker->commission }}</td></tr>
+				@endif
+
 				@if($worker->agency_in_bd)
 				<tr><td>Name of Agency in Bangladesh</td><td>{{ $worker->agency_in_bd }}</td></tr>
 				@endif
@@ -81,36 +85,44 @@
 				<tr><td>Name of Agency in Foreign Country</td><td>{{ $worker->agency_abroad }}</td></tr>
 				@endif
 
-				@if($worker->country_name)
-				<tr><td>Name of Country</td><td>{{ $worker->agent }}</td></tr>
+				@if($worker->country)
+				<tr><td>Name of Country</td><td>{{ $worker->country }}</td></tr>
 				@endif
 
 				@if($worker->medical_report)
-				<tr><td>Medical Report Copy</td><td><a href="img/medical-report.png" target="_blank">VIEW</a></td></tr>
+				<tr><td>Medical Report Copy</td><td><a href="{{ Storage::url($worker->medical_report) }}" target="_blank">VIEW</a></td></tr>
 				@endif
 
 				@if($worker->training_report)
-				<tr><td>Training Report Copy</td><td><a href="img/training-report.png" target="_blank">VIEW</a></td></tr>
-				@endif
-
-				@if($worker->finger_report)
-				<tr><td>Finger Report Copy</td><td><a href="img/finger-report.png" target="_blank">VIEW</a></td></tr>
-				@endif
-
-				@if($worker->man_power_report)
-				<tr><td>Man Power Report Copy</td><td><a href="img/man-power-report.png" target="_blank">VIEW</a></td></tr>
+				<tr><td>Training Report Copy</td><td><a href="{{ Storage::url($worker->training_report) }}" target="_blank">VIEW</a></td></tr>
 				@endif
 
 				@if($worker->visa_report)
-				<tr><td>Visa Number &amp; Visa Report Copy</td><td><a href="img/visa-number-visa-report.png" target="_blank">VIEW</a></td></tr>
+				<tr><td>Visa Copy</td><td><a href="{{ Storage::url($worker->visa_report) }}" target="_blank">VIEW</a></td></tr>
 				@endif
 
-				@if($worker->attestion_number_date)
-				<tr><td>Attestion Number &amp; Ticket</td><td><a href="img/attestion-number-ticket.png" target="_blank">VIEW</a></td></tr>
+				@if($worker->attestion)
+				<tr><td>Attestion Copy</td><td><a href="{{ Storage::url($worker->attestion) }}" target="_blank">VIEW</a></td></tr>
+				@endif
+
+				@if($worker->finger_report)
+				<tr><td>Finger Report Copy</td><td><a href="{{ Storage::url($worker->finger_report) }}" target="_blank">VIEW</a></td></tr>
+				@endif
+
+				@if($worker->man_power_report)
+				<tr><td>Man Power Report Copy</td><td><a href="{{ Storage::url($worker->man_power_report) }}" target="_blank">VIEW</a></td></tr>
+				@endif
+
+				@if($worker->ticket)
+				<tr><td>Flight &amp; Ticket Copy</td><td><a href="{{ Storage::url($worker->ticket) }}" target="_blank">VIEW</a></td></tr>
+				@endif
+
+				@if($worker->other_uploads)
+				<tr><td>Other Uploads</td><td><a href="{{ Storage::url($worker->other_uploads) }}" target="_blank">VIEW</a></td></tr>
 				@endif
 
 				@if($worker->flight_date)
-				<tr><td>Date of Flight &amp; Ticket</td><td>{{ $worker->flight_date }}</td></tr>
+				<tr><td>Date of Flight</td><td>{{ $worker->flight_date }}</td></tr>
 				@endif
 
 			</table>

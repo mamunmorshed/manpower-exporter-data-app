@@ -36,7 +36,7 @@
 			      <td>
 			      	<a href="{{ url('/workers/'.$worker->sid) }}" class="btn btn-sm btn-info">View</a>
 			      	<a href="{{ url('/workers/'.$worker->sid.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-			      	<a href="#" class="btn btn-sm btn-danger">Delete</a>
+			      	<a href="#" class="btn btn-sm btn-danger delete-btn" data-id="{{ $worker->sid }}">Delete</a>
 			      </td>
 			    </tr>
 			    @endforeach
@@ -62,4 +62,15 @@
 			    </li>
 			  </ul>
 			</nav>
+
+
+			<form method="POST" id="delete-form" >
+	      		{{ csrf_field() }}
+	      		{{ method_field('DELETE') }}
+			</form>
+
 @endsection
+
+@push('scripts_footer')
+    <script src="{{ asset('js/delete.js')}}"></script>
+@endpush
