@@ -44,30 +44,12 @@
 			</table>
 		@endif
 
-			<nav aria-label="Page navigation example">
-			  <ul class="pagination ">
-			    <li class="page-item disabled">
-			      <a class="page-link" href="#" tabindex="-1">Previous</a>
-			    </li>
-			    <li class="page-item active">
-			      <span class="page-link">
-			        1
-			        <span class="sr-only">(current)</span>
-			      </span>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#">Next</a>
-			    </li>
-			  </ul>
-			</nav>
+		{{ $workers->links() }}
 
-
-			<form method="POST" id="delete-form" >
-	      		{{ csrf_field() }}
-	      		{{ method_field('DELETE') }}
-			</form>
+		<form method="POST" id="delete-form" >
+      		{{ csrf_field() }}
+      		{{ method_field('DELETE') }}
+		</form>
 
 @endsection
 

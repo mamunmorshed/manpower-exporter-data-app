@@ -7,6 +7,8 @@ use App\Worker;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+// use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 
 class WorkerController extends Controller
@@ -26,7 +28,7 @@ class WorkerController extends Controller
 
 	public function index(){
 
-		$data['workers'] = (new Worker())->orderBy('id', 'desc')->get();
+		$data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
 		return view('worker.list', $data);
 	}
 
