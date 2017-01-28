@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use App\Agent;
 use App\Worker;
 
 
@@ -15,22 +16,36 @@ trait HumanReadableID{
 			$id += 1000;
 			$prefix = 'W';
 			$length = 4;
+
+			$sid = $this->build($id, $prefix, $length);
+			$sidCount = Worker::where('sid', $sid)->count();
+
+			while ( $sidCount >= 1) {
+				
+				$id++;
+				$sid = $this->build($id, $prefix, $length);
+				$sidCount = Worker::where('sid', $sid)->count();
+
+			}
+			
 		}else{
 			$id += 100;
 			$prefix = 'A';
 			$length = 3;
-		}
 
-		$sid = $this->build($id, $prefix, $length);
-		$sidCount = Worker::where('sid', $sid)->count();
-
-		while ( $sidCount >= 1) {
-			
-			$id++;
 			$sid = $this->build($id, $prefix, $length);
-			$sidCount = Worker::where('sid', $sid)->count();
+			$sidCount = Agent::where('sid', $sid)->count();
+
+			while ( $sidCount >= 1) {
+				
+				$id++;
+				$sid = $this->build($id, $prefix, $length);
+				$sidCount = Agent::where('sid', $sid)->count();
+
+			}
 
 		}
+
 
 		return $sid;
 

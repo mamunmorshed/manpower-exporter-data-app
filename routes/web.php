@@ -41,31 +41,19 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::delete('/workers/{id}/destroy', 'WorkerController@destroy');
 
 
-	Route::get('/agents', function(){
-		return view('agent.list');
-	});
-	Route::get('/agents/new', function(){
-		return view('agent.new');
-	});
-	Route::get('/agents/{id}/edit', function($id){
-		return view('agent.edit');
-	});
-	Route::get('/agents/{id}/view', function($id){
-		return view('agent.view');
-	});
+	Route::get('/agents', 'AgentController@index');
+	Route::get('/agents/new', 'AgentController@create');
+	Route::post('/agents/new', 'AgentController@store');
+	Route::get('/agents/{id}/edit','AgentController@edit');
+	Route::patch('/agents/{id}/edit','AgentController@update');
+	Route::get('/agents/{id}', 'AgentController@show');
+	Route::get('/agents/{id}/json', 'AgentController@showJSON');
 
-
-	Route::get('/agents/accounts', function(){
-		return view('agent.account.list');
-	});
-	Route::get('/agents/accounts/new', function(){
-		return view('agent.account.new');
-	});
-	Route::get('/agents/accounts/{id}/edit', function($id){
-		return view('agent.account.edit');
-	});
-	Route::get('/agents/accounts/{id}/view', function($id){
-		return view('agent.account.view');
-	});
+	Route::get('/agents/accounts', 'AccountController@index');
+	Route::get('/agents/accounts/new', 'AccountController@create');
+	Route::post('/agents/accounts/new', 'AccountController@store');
+	Route::get('/agents/accounts/{id}/edit', 'AccountController@edit');
+	Route::patch('/agents/accounts/{id}/edit', 'AccountController@update');
+	Route::get('/agents/accounts/{id}/view',  'AccountController@view');
 
 });

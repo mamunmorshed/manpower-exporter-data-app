@@ -83,5 +83,5 @@
 @endsection
 
 @push('scripts_footer')
-    <script src="{{ asset('js/getWorker.js')}}"></script>
+    <script src="{{ asset('js/getworker.js')}}"></script>
 @endpush

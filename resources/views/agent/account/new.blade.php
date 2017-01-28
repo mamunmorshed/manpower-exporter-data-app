@@ -3,11 +3,36 @@
 @section('content')
 
 			<h3>New Agent Accounts</h3>
-			<form method="post" action="agent-commission-view.php">
+			<form method="post">
+
+			<div id="login-block">
 				<div class="form-group row">
 				  <label for="agent-id" class="col-md-2 col-form-label">Agent ID</label>
 				  <div class="col-md-10">
-				    <input class="form-control" type="text" placeholder="Agent ID" id="agent-id">
+				    <input class="form-control" type="text" placeholder="Agent ID" id="agent-sid" name="sid">
+				  </div>
+				</div>
+
+				<div class="form-group row" id="agent-login">
+			      <div class="offset-sm-2 col-sm-10">
+			        <button class="btn btn-success">Login</button>
+			      </div>
+			    </div>
+			</div>
+
+			<div class="invisible" id="agent-commission-form">
+				
+				<div class="form-group row">
+				  <label for="worker-id" class="col-md-2 col-form-label">Agetnt ID</label>
+				  <div class="col-md-10">
+				    <input class="form-control" type="text" placeholder="Agetnt ID" id="worker-id" name="agent_id" disabled="disabled">
+				  </div>
+				</div>
+		    	
+				<div class="form-group row">
+				  <label for="worker-name" class="col-md-2 col-form-label">Agent Name</label>
+				  <div class="col-md-10">
+				    <input class="form-control" type="text" placeholder="Agent Name" id="worker-name" name="agent_name" disabled="disabled">
 				  </div>
 				</div>
 
@@ -67,7 +92,12 @@
 			        <button type="submit" class="btn btn-success">Save</button>
 			      </div>
 			    </div>
+			</div>
 
 			</form>
 
 @endsection
+
+@push('scripts_footer')
+    <script src="{{ asset('js/getagent.js')}}"></script>
+@endpush

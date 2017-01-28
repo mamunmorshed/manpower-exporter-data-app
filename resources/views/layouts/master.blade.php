@@ -39,7 +39,7 @@
 					<a href="{{ url('/agents/new') }}" class="list-group-item list-group-item-action">New Agent</a>
 					<a href="{{ url('/agents') }}" class="list-group-item list-group-item-action">View All Agents</a>
 					<a href="{{ url('/agents/accounts/new') }}" class="list-group-item list-group-item-action">Agent Accounts</a>
-					<a href="{{ url('/agents/accountss') }}" class="list-group-item list-group-item-action">View All Accounts</a>
+					<a href="{{ url('/agents/accounts') }}" class="list-group-item list-group-item-action">View All Accounts</a>
 				</div>
 			</div>
 		</div>

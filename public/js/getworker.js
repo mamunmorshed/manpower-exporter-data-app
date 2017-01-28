@@ -6,7 +6,6 @@ $('#worker-login button').on('click', function(e){
 		$.get( workerUrl, function( data ) {
 
 			$('#login-block').fadeOut(function(){
-				$('#worker-input-form').removeClass('invisible');
 				$('input[name=worker_id]').val(data['sid']);
 				$('input[name=worker_name]').val(data['name']);
 				$('input[name=worker_agent_id]').val(data['agent']);
@@ -15,7 +14,7 @@ $('#worker-login button').on('click', function(e){
 				$('input[name=worker_agency_abroad]').val(data['agency_abroad']);
 				$('input[name=worker_country]').val(data['country']);
 				$('input[name=worker_flight_date]').val(data['flight_date']);
-
+				$('#worker-input-form').removeClass('invisible');
 			});
 
 		});
