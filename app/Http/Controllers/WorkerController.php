@@ -80,18 +80,18 @@ class WorkerController extends Controller
 
     	$worker = new Worker();
     	
-    	if ($worker->name) {$worker->name = strtoupper($req->name);}
-		if ($worker->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father);}
-		if ($worker->nationality) {$worker->nationality = strtoupper($req->nationality);}
-		if ($worker->dob) {$worker->dob = $req->dob;}
-		if ($worker->present_address) {$worker->present_address = strtoupper($req->present_address);}
-		if ($worker->permanent_address) {$worker->permanent_address = strtoupper($req->permanent_address);}
-		if ($worker->mobile_no) {$worker->mobile_no = strtoupper($req->mobile_no);}
-		if ($worker->family_mobile_no) {$worker->family_mobile_no = strtoupper($req->family_mobile_no);}
-		if ($worker->voter_id_no) {$worker->voter_id_no = strtoupper($req->voter_id_no);}
-		if ($worker->passport_no) {$worker->passport_no = strtoupper($req->passport_no);}
-		if ($worker->passport_issue_date) {$worker->passport_issue_date = $req->passport_issue_date;}
-		if ($worker->passport_expiry_date) {$worker->passport_expiry_date = $req->passport_expiry_date;}
+    	if ($req->name) {$worker->name = strtoupper($req->name);}
+		if ($req->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father);}
+		if ($req->nationality) {$worker->nationality = strtoupper($req->nationality);}
+		if ($req->dob) {$worker->dob = $req->dob;}
+		if ($req->present_address) {$worker->present_address = strtoupper($req->present_address);}
+		if ($req->permanent_address) {$worker->permanent_address = strtoupper($req->permanent_address);}
+		if ($req->mobile_no) {$worker->mobile_no = strtoupper($req->mobile_no);}
+		if ($req->family_mobile_no) {$worker->family_mobile_no = strtoupper($req->family_mobile_no);}
+		if ($req->voter_id_no) {$worker->voter_id_no = strtoupper($req->voter_id_no);}
+		if ($req->passport_no) {$worker->passport_no = strtoupper($req->passport_no);}
+		if ($req->passport_issue_date) {$worker->passport_issue_date = $req->passport_issue_date;}
+		if ($req->passport_expiry_date) {$worker->passport_expiry_date = $req->passport_expiry_date;}
 		if ($req->hasFile('passport_scan_copy') 
 			&& $req->file('passport_scan_copy')->isValid() 
 			&& in_array(strtolower($req->passport_scan_copy->extension()), $validImageFormats)) {
@@ -102,7 +102,7 @@ class WorkerController extends Controller
 			&& in_array(strtolower($req->photo->extension()), $validImageFormats)) {
 			$worker->photo = $req->photo->store('public/images');
 		}
-		if ($worker->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
+		if ($req->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
 		$worker->save();
 
 		$worker->sid = $this->generate($worker->id);
@@ -226,19 +226,19 @@ class WorkerController extends Controller
 
     	$worker = (new Worker())->where('sid', $req->sid)->first();
     	
-    	if ($worker->name) {$worker->name = strtoupper($req->name); }
-    	if ($worker->agent) {$worker->agent = strtoupper($req->agentid); }
-		if ($worker->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father); }
-		if ($worker->nationality) {$worker->nationality = strtoupper($req->nationality); }
-		if ($worker->dob) {$worker->dob = $req->dob; }
-		if ($worker->present_address) {$worker->present_address = strtoupper($req->present_address); }
-		if ($worker->permanent_address) {$worker->permanent_address = strtoupper($req->permanent_address); }
-		if ($worker->mobile_no) {$worker->mobile_no = strtoupper($req->mobile_no); }
-		if ($worker->family_mobile_no) {$worker->family_mobile_no = strtoupper($req->family_mobile_no); }
-		if ($worker->voter_id_no) {$worker->voter_id_no = strtoupper($req->voter_id_no); }
-		if ($worker->passport_no) {$worker->passport_no = strtoupper($req->passport_no); }
-		if ($worker->passport_issue_date) {$worker->passport_issue_date = $req->passport_issue_date; }
-		if ($worker->passport_expiry_date) {$worker->passport_expiry_date = $req->passport_expiry_date; }
+    	if ($req->name) {$worker->name = strtoupper($req->name); }
+    	if ($req->agent) {$worker->agent = strtoupper($req->agentid); }
+		if ($req->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father); }
+		if ($req->nationality) {$worker->nationality = strtoupper($req->nationality); }
+		if ($req->dob) {$worker->dob = $req->dob; }
+		if ($req->present_address) {$worker->present_address = strtoupper($req->present_address); }
+		if ($req->permanent_address) {$worker->permanent_address = strtoupper($req->permanent_address); }
+		if ($req->mobile_no) {$worker->mobile_no = strtoupper($req->mobile_no); }
+		if ($req->family_mobile_no) {$worker->family_mobile_no = strtoupper($req->family_mobile_no); }
+		if ($req->voter_id_no) {$worker->voter_id_no = strtoupper($req->voter_id_no); }
+		if ($req->passport_no) {$worker->passport_no = strtoupper($req->passport_no); }
+		if ($req->passport_issue_date) {$worker->passport_issue_date = $req->passport_issue_date; }
+		if ($req->passport_expiry_date) {$worker->passport_expiry_date = $req->passport_expiry_date; }
 		if ($req->hasFile('passport_scan_copy') 
 			&& $req->file('passport_scan_copy')->isValid() 
 			&& in_array(strtolower($req->passport_scan_copy->extension()), $validImageFormats)) {
@@ -255,13 +255,13 @@ class WorkerController extends Controller
 			$worker->photo = $req->photo->store('public/images');
 
 		}
-		if ($worker->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
+		if ($req->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
 
-		if ($worker->agent) {$worker->agent = strtoupper($req->worker_agent_id);}
-		if ($worker->commission) {$worker->commission = (int)$req->worker_commission;}
-		if ($worker->agency_in_bd) {$worker->agency_in_bd = strtoupper($req->worker_agency_in_bd);}
-		if ($worker->agency_abroad) {$worker->agency_abroad = strtoupper($req->worker_agency_abroad);}
-		if ($worker->country) {$worker->country = strtoupper($req->worker_country);}
+		if ($req->worker_agent_id) {$worker->agent = strtoupper($req->worker_agent_id);}
+		if ($req->worker_commission) {$worker->commission = (int)$req->worker_commission;}
+		if ($req->worker_agency_in_bd) {$worker->agency_in_bd = strtoupper($req->worker_agency_in_bd);}
+		if ($req->worker_agency_abroad) {$worker->agency_abroad = strtoupper($req->worker_agency_abroad);}
+		if ($req->worker_country) {$worker->country = strtoupper($req->worker_country);}
 		
 		if ($req->hasFile('worker_medical_report') 
 			&& $req->file('worker_medical_report')->isValid() 
@@ -327,7 +327,7 @@ class WorkerController extends Controller
 			$worker->other_uploads = $req->worker_other_uploads->store('public/images');
 
 		}
-		if ($worker->flight_date) {$worker->flight_date = $req->worker_flight_date;}
+		if ($req->worker_flight_date) {$worker->flight_date = $req->worker_flight_date;}
     	
     	if ($filesToDelete) {
 	    	Storage::delete($filesToDelete);

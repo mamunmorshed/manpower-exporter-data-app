@@ -73,17 +73,17 @@ class AgentController extends Controller
 
     	$agent = new Agent();
     	
-    	if ($agent->name) {$agent->name = strtoupper($req->name);}
-		if ($agent->father_name) {$agent->father_name = strtoupper($req->father_name);}
-		if ($agent->nationality) {$agent->nationality = strtoupper($req->nationality);}
-		if ($agent->dob) {$agent->dob = $req->dob;}
-		if ($agent->present_address) {$agent->present_address = strtoupper($req->present_address);}
-		if ($agent->permanent_address) {$agent->permanent_address = strtoupper($req->permanent_address);}
-		if ($agent->mobile) {$agent->mobile = strtoupper($req->mobile);}
-		if ($agent->voter_id) {$agent->voter_id = strtoupper($req->voter_id);}
-		if ($agent->passport) {$agent->passport = strtoupper($req->passport);}
-		if ($agent->passport_issue) {$agent->passport_issue = $req->passport_issue;}
-		if ($agent->passport_expiry) {$agent->passport_expiry = $req->passport_expiry;}
+    	if ($req->name) {$agent->name = strtoupper($req->name);}
+		if ($req->father_name) {$agent->father_name = strtoupper($req->father_name);}
+		if ($req->nationality) {$agent->nationality = strtoupper($req->nationality);}
+		if ($req->dob) {$agent->dob = $req->dob;}
+		if ($req->present_address) {$agent->present_address = strtoupper($req->present_address);}
+		if ($req->permanent_address) {$agent->permanent_address = strtoupper($req->permanent_address);}
+		if ($req->mobile) {$agent->mobile = strtoupper($req->mobile);}
+		if ($req->voter_id) {$agent->voter_id = strtoupper($req->voter_id);}
+		if ($req->passport) {$agent->passport = strtoupper($req->passport);}
+		if ($req->passport_issue) {$agent->passport_issue = $req->passport_issue;}
+		if ($req->passport_expiry) {$agent->passport_expiry = $req->passport_expiry;}
 
 		if ($req->hasFile('passport_scan') 
 			&& $req->file('passport_scan')->isValid() 
@@ -96,7 +96,7 @@ class AgentController extends Controller
 			$agent->photo = $req->photo->store('public/images');
 		}
 
-		if ($agent->email) {$agent->email = strtoupper($req->email);}
+		if ($req->email) {$agent->email = strtoupper($req->email);}
 		$agent->save();
 
 		$agent->sid = $this->generate($agent->id, false);
@@ -115,17 +115,17 @@ class AgentController extends Controller
 
     	$agent = (new Agent())->where('sid', $req->sid)->first();
     	
-    	if ($agent->name) {$agent->name = strtoupper($req->name);}
-		if ($agent->father_name) {$agent->father_name = strtoupper($req->father_name);}
-		if ($agent->nationality) {$agent->nationality = strtoupper($req->nationality);}
-		if ($agent->dob) {$agent->dob = $req->dob;}
-		if ($agent->present_address) {$agent->present_address = strtoupper($req->present_address);}
-		if ($agent->permanent_address) {$agent->permanent_address = strtoupper($req->permanent_address);}
-		if ($agent->mobile) {$agent->mobile = strtoupper($req->mobile);}
-		if ($agent->voter_id) {$agent->voter_id = strtoupper($req->voter_id);}
-		if ($agent->passport) {$agent->passport = strtoupper($req->passport);}
-		if ($agent->passport_issue) {$agent->passport_issue = $req->passport_issue;}
-		if ($agent->passport_expiry) {$agent->passport_expiry = $req->passport_expiry;}
+    	if ($req->name) {$agent->name = strtoupper($req->name);}
+		if ($req->father_name) {$agent->father_name = strtoupper($req->father_name);}
+		if ($req->nationality) {$agent->nationality = strtoupper($req->nationality);}
+		if ($req->dob) {$agent->dob = $req->dob;}
+		if ($req->present_address) {$agent->present_address = strtoupper($req->present_address);}
+		if ($req->permanent_address) {$agent->permanent_address = strtoupper($req->permanent_address);}
+		if ($req->mobile) {$agent->mobile = strtoupper($req->mobile);}
+		if ($req->voter_id) {$agent->voter_id = strtoupper($req->voter_id);}
+		if ($req->passport) {$agent->passport = strtoupper($req->passport);}
+		if ($req->passport_issue) {$agent->passport_issue = $req->passport_issue;}
+		if ($req->passport_expiry) {$agent->passport_expiry = $req->passport_expiry;}
 
 		if ($req->hasFile('passport_scan') 
 			&& $req->file('passport_scan')->isValid() 
@@ -144,7 +144,7 @@ class AgentController extends Controller
 
 		}
 
-		if ($agent->email) {$agent->email = strtoupper($req->email);}
+		if ($req->email) {$agent->email = strtoupper($req->email);}
   	
     	if ($filesToDelete) {
 	    	Storage::delete($filesToDelete);
