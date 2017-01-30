@@ -122,7 +122,7 @@ class WorkerController extends Controller
     	if (!(new Agent())->where('sid', $worker->agent)->first()) {
     	 	return redirect('/workers/new/input')->with('message', 'Agent not found');
     	 	// return redirect()->route('homepage')->with('message', 'I am so frustrated.');
-    	 } 
+        }
 
 
 		if ($req->worker_commission) {$worker->commission = (int)$req->worker_commission;}
@@ -227,8 +227,12 @@ class WorkerController extends Controller
     	$worker = (new Worker())->where('sid', $req->sid)->first();
     	
     	if ($req->name) {$worker->name = strtoupper($req->name); }
-    	if ($req->agent) {$worker->agent = strtoupper($req->agentid); }
-		if ($req->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father); }
+    	if ($req->agentid) {$worker->agent = strtoupper($req->agentid); }
+        if (!(new Agent())->where('sid', $worker->agent)->first()) {
+            return redirect('/workers/'.$req->sid.'/edit')->with('message', 'Agent not found');
+            // return redirect()->route('homepage')->with('message', 'I am so frustrated.');
+        }
+        if ($req->husband_or_father) {$worker->husband_or_father = strtoupper($req->husband_or_father); }
 		if ($req->nationality) {$worker->nationality = strtoupper($req->nationality); }
 		if ($req->dob) {$worker->dob = $req->dob; }
 		if ($req->present_address) {$worker->present_address = strtoupper($req->present_address); }

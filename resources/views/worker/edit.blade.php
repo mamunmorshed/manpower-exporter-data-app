@@ -3,7 +3,9 @@
 @section('content')
 
 			<h3>Edit Worker</h3>
-
+			@if ( session()->has('message') )
+				<div class="alert alert-danger">{{ session()->get('message') }}</div>
+			@endif
 			<form method="post" enctype="multipart/form-data">
 
 			    <input type="hidden" value="{{ $worker->sid }}" name="sid">
@@ -139,7 +141,7 @@
 				<div class="form-group row">
 				  <label for="worker-name-of-country" class="col-md-3 col-form-label">Name of Country</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="text" placeholder="Name of Country" id="worker-name-of-country"  value="{{ $worker->agent or '' }}" name="country">
+				    <input class="form-control" type="text" placeholder="Name of Country" id="worker-name-of-country"  value="{{ $worker->country or '' }}" name="country">
 				  </div>
 				</div><div class="form-group row">
 				  <label for="worker-medical-report-copy" class="col-md-3 col-form-label">Medical Report Copy</label>
