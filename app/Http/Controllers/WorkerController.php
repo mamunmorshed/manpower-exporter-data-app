@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Traits\HumanReadableID;
+use App\Agent;
 use App\Worker;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,7 +19,11 @@ class WorkerController extends Controller
 	public function index(){
 
 		$data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
-		return view('worker.list', $data);
+		if (count($data['workers'])) {
+			return view('worker.list', $data);
+		}else{
+			
+		}
 	}
 
 	public function create(){
@@ -112,11 +117,19 @@ class WorkerController extends Controller
 
     	$worker = (new Worker())->where('sid', $req->sid)->first();
 
-    	if ($worker->agent) {$worker->agent = strtoupper($req->worker_agent_id);}
-		if ($worker->commission) {$worker->commission = (int)$req->worker_commission;}
-		if ($worker->agency_in_bd) {$worker->agency_in_bd = strtoupper($req->worker_agency_in_bd);}
-		if ($worker->agency_abroad) {$worker->agency_abroad = strtoupper($req->worker_agency_abroad);}
-		if ($worker->country) {$worker->country = strtoupper($req->worker_country);}
+    	if ($req->worker_agent_id) {$worker->agent = strtoupper($req->worker_agent_id);}
+
+    	if (!(new Agent())->where('sid', $worker->agent)->first()) {
+    	 	return redirect('/workers/new/input')->with('message', 'Agent not found');
+    	 	// return redirect()->route('homepage')->with('message', 'I am so frustrated.');
+    	 } 
+
+
+		if ($req->worker_commission) {$worker->commission = (int)$req->worker_commission;}
+		if ($req->worker_agency_in_bd) {$worker->agency_in_bd = strtoupper($req->worker_agency_in_bd);}
+		if ($req->worker_agency_abroad) {$worker->agency_abroad = strtoupper($req->worker_agency_abroad);}
+		if ($req->worker_country) {$worker->country = strtoupper($req->worker_country);}
+
 		$worker->save();
 
 		return redirect("/workers/{$req->sid}");

@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="row">
+			<div class="row">
 				<div class="col-md-8">
-					<h3>All Agents Accounts</h3>
+					<h3>All Transactions</h3>
 				</div>
 				<div class="col-md-4">
 					<div class="input-group">
@@ -17,215 +17,42 @@
 			</div>
 			
 			<br>
-
-			<div class="row">
-				<div class="col">
+			@if($accounts)
 					<table class="table table-hover">
 					  <thead>
 					    <tr>
-					      <th>ID</th>
-					      <th>Name</th>
+					      <th>Date</th>
+					      <th>Agent ID</th>
 					      <th>Commission</th>
-					      <th>Total Commission</th>
+					      <th>Compensation</th>
+					      <th>Advance</th>
+					      <th>Due</th>
 					      <th>Action</th>
 					    </tr>
 					  </thead>
 					  <tbody>
+				@foreach($accounts as $account)
 					    <tr>
-					      <th scope="row">A001</th>
-					      <td>MARK</td>
-					      <td>90000</td>
-					      <td>88990</td>
+					      <td>{{ $account->created_at->format('d/m/Y') }}</td>
+					      <td>{{ $account->agent }}</td>
+					      <td>{{ $account->commission }}</td>
+					      <td>{{ $account->compensation_amount }}</td>
+					      <td>{{ $account->advance_amount }}</td>
+					      <td>{{ $account->due_amount }}</td>
 					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
+					      	<a href="{{ url('/agents/accounts/'.$account->id.'/view') }}" class="btn btn-sm btn-info">View</a>
+					      	<!-- <a href="{{ url('/agents/accounts/'.$account->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a> -->
 					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
 					      </td>
 					    </tr>
-					    <tr>
-					      <th scope="row">A002</th>
-					      <td>JACOB</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A003</th>
-					      <td>LARRY THE BIRD</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A004</th>
-					      <td>MARK</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A005</th>
-					      <td>JACOB</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A006</th>
-					      <td>LARRY THE BIRD</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A007</th>
-					      <td>MARK</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A008</th>
-					      <td>JACOB</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A009</th>
-					      <td>LARRY THE BIRD</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A010</th>
-					      <td>MARK</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A011</th>
-					      <td>JACOB</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A012</th>
-					      <td>LARRY THE BIRD</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A013</th>
-					      <td>MARK</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A014</th>
-					      <td>JACOB</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">A015</th>
-					      <td>LARRY THE BIRD</td>
-					      <td>90000</td>
-					      <td>88990</td>
-					      <td>
-					      	<a href="agent-commission-view.php" class="btn btn-sm btn-info">View</a>
-					      	<a href="agent-commission-edit.php" class="btn btn-sm btn-warning">Edit</a>
-					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
-					      </td>
-					    </tr>
+				@endforeach
+					    
 					  </tbody>
 					</table>
-				</div>
-			</div>
 
-			<br>
+			@endif
 
-			<div class="row">
-				<div class="col">
-					
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination ">
-				    <li class="page-item disabled">
-				      <a class="page-link" href="#" tabindex="-1">Previous</a>
-				    </li>
-				    <li class="page-item active">
-				      <span class="page-link">
-				        1
-				        <span class="sr-only">(current)</span>
-				      </span>
-				    </li>
-				    <li class="page-item"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				    <li class="page-item">
-				      <a class="page-link" href="#">Next</a>
-				    </li>
-				  </ul>
-				</nav>
+		{{ $accounts->links() }}
 
-				</div>
-			</div>
 
 @endsection

@@ -37,7 +37,7 @@
 				      <td>
 				      	<a href="{{ url('/agents/'.$agent->sid) }}" class="btn btn-sm btn-info">View</a>
 				      	<a href="{{ url('/agents/'.$agent->sid.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-				      	<a href="#" class="btn btn-sm btn-danger delete-btn" data-id="{{ $agent->sid }}">Delete</a>
+				      	<!-- <a href="#" class="btn btn-sm btn-danger delete-btn" data-id="{{ $agent->sid }}">Delete</a> -->
 				      	<a href="{{ url('/workers/') }}" class="btn btn-sm btn-success">Workers</a>
 				      </td>
 				    </tr>

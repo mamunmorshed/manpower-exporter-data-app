@@ -38,8 +38,14 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::patch('/workers/{id}/edit', 'WorkerController@update');
 	Route::get('/workers/{id}', 'WorkerController@show');
 	Route::get('/workers/{id}/json', 'WorkerController@showJSON');
-	Route::delete('/workers/{id}/destroy', 'WorkerController@destroy');
+	// Route::delete('/workers/{id}/destroy', 'WorkerController@destroy');
 
+	Route::get('/agents/accounts/', 'AccountController@index');
+	Route::get('/agents/accounts/new', 'AccountController@create');
+	Route::post('/agents/accounts/new', 'AccountController@store');
+	// Route::get('/agents/accounts/{id}/edit', 'AccountController@edit');
+	// Route::patch('/agents/accounts/{id}/edit', 'AccountController@update');
+	Route::get('/agents/accounts/{id}/view',  'AccountController@view');
 
 	Route::get('/agents', 'AgentController@index');
 	Route::get('/agents/new', 'AgentController@create');
@@ -49,11 +55,5 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/agents/{id}', 'AgentController@show');
 	Route::get('/agents/{id}/json', 'AgentController@showJSON');
 
-	Route::get('/agents/accounts', 'AccountController@index');
-	Route::get('/agents/accounts/new', 'AccountController@create');
-	Route::post('/agents/accounts/new', 'AccountController@store');
-	Route::get('/agents/accounts/{id}/edit', 'AccountController@edit');
-	Route::patch('/agents/accounts/{id}/edit', 'AccountController@update');
-	Route::get('/agents/accounts/{id}/view',  'AccountController@view');
 
 });

@@ -2,6 +2,9 @@
 
 @section('content')
 			<h3>New Worker Input</h3>
+			@if ( session()->has('message') )
+			    <div class="alert alert-danger">{{ session()->get('message') }}</div>
+			@endif
 			<form method="post">
 				<div id="login-block">
 					<div class="form-group row">

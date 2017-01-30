@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use App\Agent;
+use App\Worker;
 use App\Traits\HumanReadableID;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +16,11 @@ class AgentController extends Controller
 
 	public function index(){
 		$data['agents'] = (new Agent())->orderBy('id', 'desc')->paginate();
-		return view('agent.list', $data);
+		if (count($data['agents'])) {
+			return view('agent.list', $data);
+		}else{
+			
+		}
 	}
 
     public function create(){
@@ -38,6 +44,11 @@ class AgentController extends Controller
     {
     	$agent = (new Agent())->where('sid', $id)->first();
     	if ($agent) {
+    		$totalCommission = (new Worker())->where('agent', $id)->sum('commission');
+    		$totalCompensation = (new Account())->where('agent', $id)->sum('compensation_amount');
+    		$totalAdvance = (new Account())->where('agent', $id)->sum('advance_amount');
+    		$agent->commission = $totalCommission -$totalCompensation - $totalAdvance;
+
     		return $agent;
     	}else{
     		return response('', 404);
