@@ -16,11 +16,14 @@ class WorkerController extends Controller
 
 	use HumanReadableID;
 
-	public function index(){
-
-		$data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
+	public function index(Request $req){
+        if ($req->s){
+            $data['workers'] = Worker::SearchByKeyword(trim($req->s))->paginate();
+        }else{
+            $data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
+        }
 		if (count($data['workers'])) {
-			return view('worker.list', $data);
+		    return view('worker.list', $data);
 		}else{
 			
 		}
