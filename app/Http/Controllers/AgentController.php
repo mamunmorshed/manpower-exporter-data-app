@@ -14,8 +14,13 @@ class AgentController extends Controller
 {
 	use HumanReadableID; 
 
-	public function index(){
-		$data['agents'] = (new Agent())->orderBy('id', 'desc')->paginate();
+	public function index(Request $req){
+	    if (trim($req->s)){
+            $data['agents'] = Agent::SearchByKeyword(trim($req->s))->paginate();
+            $data['agents']->setPath($req->fullUrl());
+        }else{
+            $data['agents'] = (new Agent())->orderBy('id', 'desc')->paginate();
+        }
 		if (count($data['agents'])) {
 			return view('agent.list', $data);
 		}else{

@@ -17,7 +17,7 @@ class WorkerController extends Controller
 	use HumanReadableID;
 
 	public function index(Request $req){
-        if ($req->s){
+        if (trim($req->s)){
             $data['workers'] = Worker::SearchByKeyword(trim($req->s))->paginate();
             $data['workers']->setPath($req->fullUrl());
         }else{

@@ -7,12 +7,14 @@
 					<h3>All Agents</h3>
 				</div>
 				<div class="col-md-4">
-					<div class="input-group">
-				      <input type="text" class="form-control" placeholder="Search for...">
-				      <span class="input-group-btn">
-				        <button class="btn btn-secondary" type="button">Go!</button>
-				      </span>
-				    </div>
+					<form>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for..." name="s">
+							<span class="input-group-btn">
+							<button class="btn btn-secondary" type="submit">Go!</button>
+						  </span>
+						</div>
+					</form>
 				</div>
 			</div>
 			

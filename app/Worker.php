@@ -14,6 +14,7 @@ class Worker extends Model
                 $query->where("sid", "LIKE", "%$keyword%")
                     ->orWhere("agent", "LIKE", "%$keyword%")
                     ->orWhere("name", "LIKE", "%$keyword%")
+                    ->orWhere("mobile_no", "LIKE", "%$keyword%")
                     ->orWhere("passport_no", "LIKE", "%$keyword%");
             });
         }
