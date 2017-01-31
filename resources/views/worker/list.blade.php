@@ -14,7 +14,7 @@
 							<button class="btn btn-secondary" type="submit">Go!</button>
 						  </span>
 						</div>
-						{{ csrf_field() }}
+
 					</form>
 				</div>
 			</div>

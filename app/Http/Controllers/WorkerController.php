@@ -19,6 +19,7 @@ class WorkerController extends Controller
 	public function index(Request $req){
         if ($req->s){
             $data['workers'] = Worker::SearchByKeyword(trim($req->s))->paginate();
+            $data['workers']->setPath($req->fullUrl());
         }else{
             $data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
         }
