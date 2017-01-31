@@ -29,6 +29,7 @@ class HomeController extends Controller
         $after = Carbon::Today()->addDay(2)->format('Y-m-d');
         $today = Carbon::Today()->format('Y-m-d');
         $before = Carbon::Today()->subDay(2)->format('Y-m-d');
+        $totalNotification = 0;
 
         $workerFilter = [['flight_date','>=', $today],['flight_date','<=', $after]];
         $workerNotification = (new Worker())->where($workerFilter)->orderBy('flight_date', 'asc')->get();
@@ -40,6 +41,7 @@ class HomeController extends Controller
             }
         }
         $data['workers'] = $workerNotification;
+        $totalNotification += count($data['workers']);
 
 
         $agentFilter = [['flight_date','<', $today],['flight_date','>=', $before]];
@@ -50,6 +52,9 @@ class HomeController extends Controller
             }
         }
         $data['agents'] = $agentNotification;
+        $totalNotification += count($data['agents']);
+
+        session(['totalNotification' => $totalNotification]);
 
         return view('landing', $data);
     }

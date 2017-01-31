@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HIMA Company Data Application</title>
+	<title>{{ config('app.name', 'MANPOWER AGENCY') }}</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 </head>
@@ -9,8 +9,8 @@
 
 	<nav class="navbar navbar-inverse bg-primary">
 		<div class="container-fluid">
-			<a href="index.php" class="navbar-brand"><h1>H. A. TRAVELS</h1></a>
-			<a href="index.php"><span class="badge badge-warning float-right hidden-print">18</span></a>
+			<a href="{{ url('/home') }}" class="navbar-brand"><h1>{{ config('app.name', 'MANPOWER AGENCY') }}</h1></a>
+			<a href="{{ url('/home') }}"><span class="badge badge-warning float-right hidden-print">{{ session('totalNotification') }}</span></a>
 
 		</div>
 	</nav>

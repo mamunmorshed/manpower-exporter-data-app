@@ -16,7 +16,7 @@ class AgentController extends Controller
 
 	public function index(Request $req){
 	    if (trim($req->s)){
-            $data['agents'] = Agent::SearchByKeyword(trim($req->s))->paginate();
+            $data['agents'] = Agent::SearchByKeyword(trim($req->s))->orderBy('id', 'desc')->paginate();
             $data['agents']->setPath($req->fullUrl());
             $data['s'] = trim($req->s);
         }else{
