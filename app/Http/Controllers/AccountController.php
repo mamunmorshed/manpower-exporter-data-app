@@ -12,9 +12,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class AccountController extends Controller
 {
 	
-	public function index(){
-	
-		$data['accounts'] = (new Account())->orderBy('id', 'desc')->paginate();
+	public function index(Request $req){
+        if (trim($req->s)){
+            $data['accounts'] = Account::SearchByKeyword(trim($req->s))->paginate();
+            $data['accounts']->setPath($req->fullUrl());
+        }else{
+            $data['accounts'] = (new Account())->orderBy('id', 'desc')->paginate();
+        }
 		if (count($data['accounts'])) {
 			return view('agent.account.list', $data);
 		}else{

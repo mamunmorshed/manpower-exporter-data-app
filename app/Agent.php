@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agent extends Model
 {
-    //    //Function for saerch
+    //Function for saerch
     public function scopeSearchByKeyWord($query, $keyword)
     {
         if($keyword!=''){
