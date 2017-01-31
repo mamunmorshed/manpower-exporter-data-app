@@ -20,14 +20,12 @@ Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginF
 Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
-//Route::get('/home', 'HomeController@index');
- Route::get('/home', function(){
- 	return view('landing');
- });
 
 Route::group(['middleware' => 'auth'],function(){
 
-	Route::get('/workers', 'WorkerController@index');
+    Route::get('/home', 'HomeController@index');
+
+    Route::get('/workers', 'WorkerController@index');
 	Route::get('/workers/new', 'WorkerController@create');
 	Route::post('/workers/new', 'WorkerController@store');
 	Route::get('/workers/new/input', 'WorkerController@createInput');

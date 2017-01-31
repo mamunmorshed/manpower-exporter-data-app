@@ -20,4 +20,9 @@ class Worker extends Model
         }
         return $query;
     }
+
+    public function workerAgent()
+    {
+        return $this->belongsTo('App\Agent', 'agent', 'sid');
+    }
 }
