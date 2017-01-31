@@ -20,6 +20,7 @@ class WorkerController extends Controller
         if (trim($req->s)){
             $data['workers'] = Worker::SearchByKeyword(trim($req->s))->paginate();
             $data['workers']->setPath($req->fullUrl());
+            $data['s'] = trim($req->s);
         }else{
             $data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
         }

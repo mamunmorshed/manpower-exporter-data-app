@@ -18,6 +18,7 @@ class AgentController extends Controller
 	    if (trim($req->s)){
             $data['agents'] = Agent::SearchByKeyword(trim($req->s))->paginate();
             $data['agents']->setPath($req->fullUrl());
+            $data['s'] = trim($req->s);
         }else{
             $data['agents'] = (new Agent())->orderBy('id', 'desc')->paginate();
         }

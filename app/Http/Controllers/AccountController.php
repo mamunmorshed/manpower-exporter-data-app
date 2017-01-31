@@ -16,6 +16,7 @@ class AccountController extends Controller
         if (trim($req->s)){
             $data['accounts'] = Account::SearchByKeyword(trim($req->s))->paginate();
             $data['accounts']->setPath($req->fullUrl());
+            $data['s'] = trim($req->s);
         }else{
             $data['accounts'] = (new Account())->orderBy('id', 'desc')->paginate();
         }
