@@ -43,3 +43,8 @@ input{
     background-color: #eceeef;
     border-color: #ddd;
 }
+
+
+.btn-logout{
+    text-transform: capitalize;
+}
