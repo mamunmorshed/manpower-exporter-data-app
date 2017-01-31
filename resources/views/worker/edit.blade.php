@@ -117,10 +117,17 @@
 				</div>
 
 				<div class="form-group row">
-				  <label for="worker-experience-time-country" class="col-md-3 col-form-label">Experience Time &amp; Country</label>
-				  <div class="col-md-9">
-				    <input class="form-control" type="text" placeholder="Experience Time &amp; Country" id="worker-experience-time-country"  value="{{ $worker->experience_details or '' }}" name="experience_details">
-				  </div>
+					<label for="worker-experience-time-country" class="col-md-3 col-form-label">Experience Time &amp; Country</label>
+					<div class="col-md-9">
+						<input class="form-control" type="text" placeholder="Experience Time &amp; Country" id="worker-experience-time-country"  value="{{ $worker->experience_details or '' }}" name="experience_details">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="worker-status" class="col-md-3 col-form-label">Status</label>
+					<div class="col-md-9">
+						<input class="form-control" type="text" placeholder="Status" id="worker-status"  value="{{ $worker->status or '' }}" name="status">
+					</div>
 				</div>
 
 

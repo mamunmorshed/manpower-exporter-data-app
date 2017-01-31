@@ -108,6 +108,7 @@ class WorkerController extends Controller
 			$worker->photo = $req->photo->store('public/images');
 		}
 		if ($req->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
+        if ($req->status) {$worker->status = strtoupper($req->status);}
 		$worker->save();
 
 		$worker->sid = $this->generate($worker->id);
@@ -265,6 +266,7 @@ class WorkerController extends Controller
 
 		}
 		if ($req->experience_details) {$worker->experience_details = strtoupper($req->experience_details);}
+		if ($req->status) {$worker->status = strtoupper($req->status);}
 
 		if ($req->worker_agent_id) {$worker->agent = strtoupper($req->worker_agent_id);}
 		if ($req->worker_commission) {$worker->commission = (int)$req->worker_commission;}

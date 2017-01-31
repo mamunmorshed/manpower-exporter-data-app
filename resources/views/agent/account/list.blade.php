@@ -9,7 +9,7 @@
 				<div class="col-md-4">
 					<form>
 						<div class="input-group">
-						  <input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}">
+						  <input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}"  required="required">
 						  <span class="input-group-btn">
 							<button class="btn btn-secondary" type="submit">Go!</button>
 						  </span>

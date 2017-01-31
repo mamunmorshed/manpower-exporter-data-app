@@ -73,6 +73,10 @@
 				<tr><td>Experience Time &amp; Country</td><td>{{ $worker->experience_details }}</td></tr>
 				@endif
 
+				@if($worker->status)
+					<tr><td>Status</td><td>{{ $worker->status }}</td></tr>
+				@endif
+
 				@if($worker->commission)
 				<tr><td>Commission</td><td>{{ $worker->commission }}</td></tr>
 				@endif

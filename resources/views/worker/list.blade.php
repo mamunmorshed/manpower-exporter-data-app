@@ -9,7 +9,7 @@
 				<div class="col-md-4">
 					<form>
 						<div class="input-group">
-						  <input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}">
+						  <input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}" required="required">
 						  <span class="input-group-btn">
 							<button class="btn btn-secondary" type="submit">Go!</button>
 						  </span>
@@ -27,6 +27,7 @@
 			      <th>ID</th>
 			      <th>Name</th>
 			      <th>Passport No.</th>
+			      <th>Status</th>
 			      <th>Action</th>
 			    </tr>
 			  </thead>
@@ -36,6 +37,7 @@
 			      <th scope="row">{{ $worker->sid }}</th>
 			      <td>{{ $worker->name }}</td>
 			      <td>{{ $worker->passport_no }}</td>
+			      <td>{{ $worker->status or ''}}</td>
 			      <td>
 			      	<a href="{{ url('/workers/'.$worker->sid) }}" class="btn btn-sm btn-info">View</a>
 			      	<a href="{{ url('/workers/'.$worker->sid.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
