@@ -3,6 +3,8 @@
 <head>
 	<title>{{ config('app.name', 'MANPOWER AGENCY') }}</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker3.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 </head>
 <body>
@@ -67,6 +69,7 @@
 <script src="{{ asset('js/jquery-3.1.1.js')}}"></script>
 <script src="{{ asset('js/tether.js')}}"></script>
 <script src="{{ asset('js/bootstrap.js')}}"></script>
+<script src="{{ asset('js/bootstrap-datepicker.js')}}"></script>
 <script src="{{ asset('js/script.js')}}"></script>
 @stack('scripts_footer')
 
