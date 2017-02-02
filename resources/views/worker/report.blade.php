@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-			<h3>New Worker Report</h3>
+			<h3>Existing worker</h3>
 			<form method="post" enctype="multipart/form-data">
 				<div id="login-block">
 					<div class="form-group row">
@@ -93,7 +93,7 @@
 				<div class="form-group row">
 				  <label for="worker-date-of-flight" class="col-md-3 col-form-label">Date of Flight</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Date of Flight" id="worker-date-of-flight" name="worker_flight_date">
+				    <input class="form-control datepicker-field" placeholder="Date of Flight" id="worker-date-of-flight" name="worker_flight_date">
 				  </div>
 				</div>
 

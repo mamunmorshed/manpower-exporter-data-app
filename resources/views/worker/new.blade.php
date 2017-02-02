@@ -27,7 +27,8 @@
 				<div class="form-group row">
 				  <label for="worker-dob" class="col-md-3 col-form-label">Date of Birth</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Date of Birth" id="worker-dob" name="dob">
+				    <input class="form-control datepicker-field" placeholder="Date of Birth" id="worker-dob" name="dob">
+				    {{--<input class="form-control" type="date" placeholder="Date of Birth" id="worker-dob" name="dob">--}}
 				  </div>
 				</div>
 
@@ -76,14 +77,14 @@
 				<div class="form-group row">
 				  <label for="worker-passport-issue-date" class="col-md-3 col-form-label">Passport Issue Date</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Passport Issue Date" id="worker-passport-issue-date" name="passport_issue_date">
+				    <input class="form-control datepicker-field" placeholder="Passport Issue Date" id="worker-passport-issue-date" name="passport_issue_date">
 				  </div>
 				</div>
 
 				<div class="form-group row">
 				  <label for="worker-passport-expiry-date" class="col-md-3 col-form-label">Passport Expiry Date</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Passport Expiry Date" id="worker-passport-expiry-date" name="passport_expiry_date">
+				    <input class="form-control datepicker-field" placeholder="Passport Expiry Date" id="worker-passport-expiry-date" name="passport_expiry_date">
 				  </div>
 				</div>
 

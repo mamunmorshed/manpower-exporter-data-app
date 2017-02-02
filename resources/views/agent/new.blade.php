@@ -28,7 +28,7 @@
 				<div class="form-group row">
 				  <label for="agent-dob" class="col-md-3 col-form-label">Date of Birth</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Date of Birth" id="agent-dob" name="dob">
+				    <input class="form-control datepicker-field" placeholder="Date of Birth" id="agent-dob" name="dob">
 				  </div>
 				</div>
 
@@ -70,14 +70,14 @@
 				<div class="form-group row">
 				  <label for="agent-passport-issue-date" class="col-md-3 col-form-label">Passport Issue Date</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Passport Issue Date" id="agent-passport-issue-date" name="passport_issue">
+				    <input class="form-control datepicker-field" placeholder="Passport Issue Date" id="agent-passport-issue-date" name="passport_issue">
 				  </div>
 				</div>
 
 				<div class="form-group row">
 				  <label for="agent-passport-expiry-date" class="col-md-3 col-form-label">Passport Expiry Date</label>
 				  <div class="col-md-9">
-				    <input class="form-control" type="date" placeholder="Passport Expiry Date" id="agent-passport-expiry-date" name="passport_expiry">
+				    <input class="form-control datepicker-field" placeholder="Passport Expiry Date" id="agent-passport-expiry-date" name="passport_expiry">
 				  </div>
 				</div>
 

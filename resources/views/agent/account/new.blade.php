@@ -52,7 +52,7 @@
 						    <input class="form-control" type="number" placeholder="Amount" id="agent-compensation-amount" name="agent_compensation_amount">
 						  </div>
 						  <div class="col-md-3">
-						    <input class="form-control" type="date" placeholder="Date &amp; Time" id="agent-due-amount-date-time" name="agent_due_amount_date_time">
+						    <input class="form-control datepicker-field" placeholder="Date &amp; Time" id="agent-due-amount-date-time" name="agent_due_amount_date_time">
 						  </div>
 						  <div class="col-md-3">
 						    <input class="form-control" type="text" placeholder="Reference ID" id="agent-due-amount-reference" name="agent_due_amount_reference">
@@ -71,7 +71,7 @@
 						    <input class="form-control" type="number" placeholder="Amount" id="agent-advance-amount" name="agent_advance_amount">
 						  </div>
 						  <div class="col-md-3">
-						    <input class="form-control" type="date" placeholder="Date &amp; Time" id="agent-advance-amount-date-time" name="agent_advance_amount_date_time">
+						    <input class="form-control datepicker-field" placeholder="Date &amp; Time" id="agent-advance-amount-date-time" name="agent_advance_amount_date_time">
 						  </div>
 						  <div class="col-md-3">
 						    <input class="form-control" type="text" placeholder="Reference ID" id="agent-advance-amount-reference" name="agent_advance_amount_reference">
