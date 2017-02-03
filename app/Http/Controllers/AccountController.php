@@ -49,11 +49,8 @@ class AccountController extends Controller
         }
 
         $data['accounts']->setPath($req->fullUrl());
-		if (count($data['accounts'])) {
-			return view('agent.account.list', $data);
-		}else{
-			
-		}
+
+        return view('agent.account.list', $data);
 	}
 
 	public function create(){

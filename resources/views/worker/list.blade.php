@@ -50,6 +50,8 @@
 			    @endforeach
 			  </tbody>
 			</table>
+		@else
+			<p class="lead text-danger">No Records Found.</p>
 		@endif
 
 		{{ $workers->links() }}

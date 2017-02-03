@@ -53,11 +53,8 @@ class WorkerController extends Controller
         }
 
         $data['workers']->setPath($req->fullUrl());
-        if (count($data['workers'])) {
-		    return view('worker.list', $data);
-		}else{
-			
-		}
+
+        return view('worker.list', $data);
 	}
 
 	public function create(){

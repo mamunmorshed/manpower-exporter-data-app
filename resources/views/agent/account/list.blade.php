@@ -21,7 +21,7 @@
 			</div>
 			
 			<br>
-			@if($accounts)
+			@if(count($accounts))
 					<table class="table table-hover">
 					  <thead>
 					    <tr>
@@ -53,7 +53,8 @@
 					    
 					  </tbody>
 					</table>
-
+            @else
+				<p class="lead text-danger">No Records Found.</p>
 			@endif
 
 		{{ $accounts->links() }}

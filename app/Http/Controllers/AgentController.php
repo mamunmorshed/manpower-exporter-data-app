@@ -22,11 +22,8 @@ class AgentController extends Controller
         }else{
             $data['agents'] = (new Agent())->orderBy('id', 'desc')->paginate();
         }
-		if (count($data['agents'])) {
-			return view('agent.list', $data);
-		}else{
-			
-		}
+
+        return view('agent.list', $data);
 	}
 
     public function create(){
