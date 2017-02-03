@@ -3,17 +3,15 @@
 @section('content')
 
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-6">
 					<h3>All Agents</h3>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<form>
 						<div class="input-group">
 							<input class="form-control datepicker-field"  placeholder="From" name="from" value="{{ $from or '' }}">
 							<input class="form-control datepicker-field"  placeholder="To" name="to" value="{{ $to or '' }}">
-						</div>
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}" required="required">
+							<input type="text" class="form-control" placeholder="Search for..." name="s" value="{{ $s or '' }}">
 							<span class="input-group-btn">
 							<button class="btn btn-secondary" type="submit">Go!</button>
 						  </span>
