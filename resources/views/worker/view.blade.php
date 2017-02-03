@@ -2,8 +2,8 @@
 
 @section('content')
 
-			<h3>View Worker</h3>
-			<table class="table table-bordered">
+			<h3 class="hidden-print">View Worker</h3>
+			<table class="table table-bordered hidden-print">
 				
 				@if($worker->sid)
 				<tr><td>Worker ID</td><td>{{ $worker->sid }}</td></tr>
@@ -130,8 +130,134 @@
 				@endif
 
 			</table>
-	    	<a href="{{ $edit_url }}" class="btn btn-success float-right">Edit Worker</a>
-	    	<a href="#" class="btn btn-success">Print Worker Copy</a> 
-	    	<a href="#" class="btn btn-success">Print Office Copy</a>
+
+
+            <table class="table table-bordered company hidden-print">
+                @if($worker->sid)
+                    <tr><td>Worker ID</td><td>{{ $worker->sid }}</td></tr>
+                @endif
+
+                @if($worker->agent)
+                    <tr><td>Agent ID</td><td>{{ $worker->agent }}</td></tr>
+                @endif
+
+                @if($worker->name)
+                    <tr><td>Name</td><td>{{ $worker->name }}</td></tr>
+                @endif
+
+                @if($worker->husband_or_father)
+                    <tr><td>Husband / Father Name</td><td>{{ $worker->husband_or_father }}</td></tr>
+                @endif
+
+                @if($worker->nationality)
+                    <tr><td>Nationality</td><td>{{ $worker->nationality}}</td></tr>
+                @endif
+
+                @if($worker->dob)
+                    <tr><td>Date of Birth</td><td>{{ $worker->dob }}</td></tr>
+                @endif
+
+                @if($worker->present_address)
+                    <tr><td>Present Address</td><td>{{ $worker->present_address }}</td></tr>
+                @endif
+
+                @if($worker->permanent_address)
+                    <tr><td>Permanent Address</td><td>{{ $worker->permanent_address }}</td></tr>
+                @endif
+
+                @if($worker->mobile_no)
+                    <tr><td>Mobile No.</td><td>{{ $worker->mobile_no }}</td></tr>
+                @endif
+
+                @if($worker->family_mobile_no)
+                    <tr><td>Family Mobile No.</td><td>{{ $worker->family_mobile_no }}</td></tr>
+                @endif
+
+                @if($worker->voter_id_no)
+                    <tr><td>Voter ID No.</td><td>{{ $worker->voter_id_no }}</td></tr>
+                @endif
+
+                @if($worker->passport_no)
+                    <tr><td>Passport No.</td><td>{{ $worker->passport_no }}</td></tr>
+                @endif
+
+                @if($worker->passport_issue_date)
+                    <tr><td>Passport Issue Date</td><td>{{ $worker->passport_issue_date }}</td></tr>
+                @endif
+
+                @if($worker->passport_expiry_date)
+                    <tr><td>Passport Expiry Date</td><td>{{ $worker->passport_expiry_date }}</td></tr>
+                @endif
+
+                @if($worker->experience_details)
+                    <tr><td>Experience Time &amp; Country</td><td>{{ $worker->experience_details }}</td></tr>
+                @endif
+
+                @if($worker->status)
+                    <tr><td>Status</td><td>{{ $worker->status }}</td></tr>
+                @endif
+
+                @if($worker->commission)
+                    <tr><td>Commission</td><td>{{ $worker->commission }}</td></tr>
+                @endif
+
+                @if($worker->agency_in_bd)
+                    <tr><td>Name of Agency in Bangladesh</td><td>{{ $worker->agency_in_bd }}</td></tr>
+                @endif
+
+                @if($worker->agency_abroad)
+                    <tr><td>Name of Agency in Foreign Country</td><td>{{ $worker->agency_abroad }}</td></tr>
+                @endif
+
+                @if($worker->country)
+                    <tr><td>Name of Country</td><td>{{ $worker->country }}</td></tr>
+                @endif
+
+                @if($worker->flight_date)
+                    <tr><td>Date of Flight</td><td>{{ $worker->flight_date }}</td></tr>
+                @endif
+            </table>
+
+            <table class="table table-bordered worker hidden-print">
+
+                @if($worker->photo)
+                    <tr><td colspan="2" class="text-center"><img class="img-thumbnail" src="{{ Storage::url($worker->photo) }}"></td></tr>
+                @endif
+
+                @if($worker->sid)
+                    <tr><td>Worker ID</td><td>{{ $worker->sid }}</td></tr>
+                @endif
+
+                @if($worker->name)
+                    <tr><td>Name</td><td>{{ $worker->name }}</td></tr>
+                @endif
+
+                @if($worker->present_address)
+                    <tr><td>Present Address</td><td>{{ $worker->present_address }}</td></tr>
+                @endif
+
+                @if($worker->permanent_address)
+                    <tr><td>Permanent Address</td><td>{{ $worker->permanent_address }}</td></tr>
+                @endif
+
+                @if($worker->mobile_no)
+                    <tr><td>Mobile No.</td><td>{{ $worker->mobile_no }}</td></tr>
+                @endif
+
+                @if($worker->voter_id_no)
+                    <tr><td>Voter ID No.</td><td>{{ $worker->voter_id_no }}</td></tr>
+                @endif
+
+                @if($worker->passport_no)
+                    <tr><td>Passport No.</td><td>{{ $worker->passport_no }}</td></tr>
+                @endif
+
+            </table>
+
+
+
+	    	<a href="{{ $edit_url }}" class="btn btn-success float-right hidden-print">Edit Worker</a>
+	    	<a href="#" class="btn btn-success hidden-print print" data-printarea="worker"  >Print Worker Copy</a>
+	    	<a href="#" class="btn btn-success hidden-print print" data-printarea="company"  >Print Office Copy</a>
 
 @endsection

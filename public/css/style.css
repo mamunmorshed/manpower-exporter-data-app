@@ -64,3 +64,7 @@ input{
     width: 30%;
 
 }
+
+.worker, .company{
+    display: none;
+}
