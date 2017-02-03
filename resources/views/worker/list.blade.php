@@ -54,7 +54,7 @@
 			<p class="lead text-danger">No Records Found.</p>
 		@endif
 
-		{{ $workers->links() }}
+		{{ $workers->appends($_GET)->links() }}
 
 		<form method="POST" id="delete-form" >
       		{{ csrf_field() }}

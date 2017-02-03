@@ -52,8 +52,6 @@ class WorkerController extends Controller
             $data['to'] = trim($req->to);
         }
 
-        $data['workers']->setPath($req->fullUrl());
-
         return view('worker.list', $data);
 	}
 

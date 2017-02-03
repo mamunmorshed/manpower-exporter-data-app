@@ -57,7 +57,7 @@
 				<p class="lead text-danger">No Records Found.</p>
 			@endif
 
-		{{ $accounts->links() }}
+		{{ $accounts->appends($_GET)->links() }}
 
 
 @endsection

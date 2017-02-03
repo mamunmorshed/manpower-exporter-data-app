@@ -48,8 +48,6 @@ class AccountController extends Controller
             $data['to'] = trim($req->to);
         }
 
-        $data['accounts']->setPath($req->fullUrl());
-
         return view('agent.account.list', $data);
 	}
 
