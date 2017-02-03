@@ -48,3 +48,19 @@ input{
 .btn-logout{
     text-transform: capitalize;
 }
+
+
+.table.table-borderless td, .table.table-borderless th {
+    border: none;
+}
+
+/*for printing the signature section of the accounts single items*/
+.print-full-width tbody, .print-full-width tr{
+        display: block;
+        width: 100%;
+}
+.print-full-width td{
+    display: inline-block;
+    width: 30%;
+
+}

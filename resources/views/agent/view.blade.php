@@ -2,8 +2,8 @@
 
 @section('content')
 
-			<h3>View Agent</h3>
-			
+			<h3 class="hidden-print">View Agent</h3>
+
 			<table class="table table-bordered">
 				<tbody>
 					
@@ -56,11 +56,11 @@
 					@endif
 
 					@if($agent->passport_scan)
-					<tr><td>Passport Scan Copy</td><td><a href="{{ Storage::url($agent->passport_scan) }}" target="_blank">VIEW</a></td></tr>
+					<tr class="hidden-print"><td>Passport Scan Copy</td><td><a href="{{ Storage::url($agent->passport_scan) }}" target="_blank">VIEW</a></td></tr>
 					@endif
 
 					@if($agent->photo)
-					<tr><td>Photo</td><td><a href="{{ Storage::url($agent->photo) }}" target="_blank">VIEW</a></td></tr>
+					<tr class="hidden-print"><td>Photo</td><td><a href="{{ Storage::url($agent->photo) }}" target="_blank">VIEW</a></td></tr>
 					@endif
 
 					@if($agent->email)
@@ -70,8 +70,8 @@
 				</tbody>
 			</table>
 
-	    	<a href="#" class="btn btn-success">Print</a>
-	    	<a href="worker-list.php" class="btn btn-success">View Workers</a>
-	    	<a href="{{ $edit_url }}" class="btn btn-success float-right">Edit Agent</a>
+	    	<a href="#" class="btn btn-success hidden-print print" data-printarea="full">Print</a>
+	    	<a href="{{ url('/workers/?s='. $agent->sid ) }}" class="btn btn-success hidden-print">View Workers</a>
+	    	<a href="{{ $edit_url }}" class="btn btn-success float-right hidden-print">Edit Agent</a>
 
 @endsection
