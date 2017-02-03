@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Account;
 use App\Agent;
 use App\Worker;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -14,12 +15,40 @@ class AccountController extends Controller
 	
 	public function index(Request $req){
         if (trim($req->s)){
-            $data['accounts'] = Account::SearchByKeyword(trim($req->s))->orderBy('id', 'desc')->paginate();
-            $data['accounts']->setPath($req->fullUrl());
+            if (trim($req->from) && trim($req->to)){
+                $dateFilter = [['created_at', '>=', trim($req->from)],['created_at', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['accounts'] = Account::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (trim($req->from) && !trim($req->to)){
+                $dateFilter = [['created_at', '>=', trim($req->from)]];
+                $data['accounts'] = Account::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (!trim($req->from) && trim($req->to)){
+                $dateFilter = [['created_at', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['accounts'] = Account::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }else{
+                $data['accounts'] = Account::SearchByKeyword(trim($req->s))->orderBy('id', 'desc')->paginate();
+            }
             $data['s'] = trim($req->s);
+            $data['from'] = trim($req->from);
+            $data['to'] = trim($req->to);
         }else{
-            $data['accounts'] = (new Account())->orderBy('id', 'desc')->paginate();
+            if (trim($req->from) && trim($req->to)){
+                $dateFilter = [['created_at', '>=', trim($req->from)],['created_at', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['accounts'] = (new Account())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (trim($req->from) && !trim($req->to)){
+                $dateFilter = [['created_at', '>=', trim($req->from)]];
+                $data['accounts'] = (new Account())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (!trim($req->from) && trim($req->to)){
+                $dateFilter = [['created_at', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['accounts'] = (new Account())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }else{
+                $data['accounts'] = (new Account())->orderBy('id', 'desc')->paginate();
+            }
+
+            $data['from'] = trim($req->from);
+            $data['to'] = trim($req->to);
         }
+
+        $data['accounts']->setPath($req->fullUrl());
 		if (count($data['accounts'])) {
 			return view('agent.account.list', $data);
 		}else{

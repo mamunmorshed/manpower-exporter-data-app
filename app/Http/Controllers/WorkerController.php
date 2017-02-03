@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Traits\HumanReadableID;
 use App\Agent;
 use App\Worker;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -18,13 +19,41 @@ class WorkerController extends Controller
 
 	public function index(Request $req){
         if (trim($req->s)){
-            $data['workers'] = Worker::SearchByKeyword(trim($req->s))->orderBy('id', 'desc')->paginate();
-            $data['workers']->setPath($req->fullUrl());
+            if (trim($req->from) && trim($req->to)){
+                $dateFilter = [['flight_date', '>=', trim($req->from)],['flight_date', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['workers'] = Worker::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (trim($req->from) && !trim($req->to)){
+                $dateFilter = [['flight_date', '>=', trim($req->from)]];
+                $data['workers'] = Worker::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (!trim($req->from) && trim($req->to)){
+                $dateFilter = [['flight_date', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['workers'] = Worker::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }else{
+                $data['workers'] = Worker::SearchByKeyword(trim($req->s))->orderBy('id', 'desc')->paginate();
+            }
             $data['s'] = trim($req->s);
+            $data['from'] = trim($req->from);
+            $data['to'] = trim($req->to);
         }else{
-            $data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
+            if (trim($req->from) && trim($req->to)){
+                $dateFilter = [['flight_date', '>=', trim($req->from)],['flight_date', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['workers'] = (new Worker())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (trim($req->from) && !trim($req->to)){
+                $dateFilter = [['flight_date', '>=', trim($req->from)]];
+                $data['workers'] = (new Worker())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }elseif (!trim($req->from) && trim($req->to)){
+                $dateFilter = [['flight_date', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
+                $data['workers'] = (new Worker())->where($dateFilter)->orderBy('id', 'desc')->paginate();
+            }else{
+                $data['workers'] = (new Worker())->orderBy('id', 'desc')->paginate();
+            }
+
+            $data['from'] = trim($req->from);
+            $data['to'] = trim($req->to);
         }
-		if (count($data['workers'])) {
+
+        $data['workers']->setPath($req->fullUrl());
+        if (count($data['workers'])) {
 		    return view('worker.list', $data);
 		}else{
 			
