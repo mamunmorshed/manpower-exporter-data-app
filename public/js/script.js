@@ -1,6 +1,8 @@
 $('.datepicker-field').datepicker({
     format: 'yyyy-mm-dd',
-    autoclose: true
+    autoclose: true,
+    weekStart: 6,
+    todayHighlight: true
 });
 
 $('a.print').on('click', function (e){

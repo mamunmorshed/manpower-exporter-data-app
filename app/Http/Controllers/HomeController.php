@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Agent;
 use App\Worker;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
