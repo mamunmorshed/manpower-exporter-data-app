@@ -40,8 +40,11 @@
 
 				<div class="form-group row">
 				  <label for="agent-commission" class="col-md-2 col-form-label">Commission</label>
-				  <div class="col-md-10">
+				  <div class="col-md-5">
 				    <input class="form-control" type="number" placeholder="Commission" id="agent-commission" name="agent_commission" readonly="readonly">
+				  </div>
+				  <div class="col-md-5">
+				    <input class="form-control" type="text" placeholder="Reference ID" id="commission-reference" name="commission_reference">
 				  </div>
 				</div>
 				<div class="row">

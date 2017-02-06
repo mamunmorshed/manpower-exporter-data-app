@@ -7,12 +7,13 @@
 
 
 				<tr>
-					<td colspan="2">Agent ID</td>
-					<td colspan="2">{{ $account->agent }}</td>
+					<td>Agent ID</td>
+					<td colspan="3">{{ $account->agent }}</td>
 				</tr>
 				<tr>
-					<td colspan="2">Commission</td>
-					<td colspan="2">{{ $account->commission }}</td>
+					<td>Commission</td>
+					<td>{{ $account->commission }}</td>
+					<td colspan="2">{{ $account->commission_reference }}</td>
 				</tr>
 				<tr>
 					<td colspan="4"><strong>Compensation:</strong></td>
@@ -33,8 +34,8 @@
 					<td>{{ $account->advance_remarks }}</td>
 				</tr>
 				<tr>
-					<td colspan="2">Due Amount</td>
-					<td colspan="2">{{ $account->due_amount }}</td>
+					<td>Due Amount</td>
+					<td colspan="3">{{ $account->due_amount }}</td>
 				</tr>
 			</table>
 
