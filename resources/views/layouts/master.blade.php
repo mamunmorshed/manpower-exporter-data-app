@@ -44,14 +44,14 @@
 					<a href="{{ url('/agents/accounts') }}" class="list-group-item list-group-item-action">View All Accounts</a>
 				</div>
 			</div>
-				<br>
-				<br>
-				<form id="logout-form" action="{{ url('/logout') }}" method="POST">
-					<input type="submit" value="Logout" class="btn btn-outline-danger btn-logout">
-					{{ csrf_field() }}
-				</form>
-				<br>
-				<br>
+				{{--<br>--}}
+				{{--<br>--}}
+				{{--<form id="logout-form" action="{{ url('/logout') }}" method="POST">--}}
+					{{--<input type="submit" value="Logout" class="btn btn-outline-danger btn-logout">--}}
+					{{--{{ csrf_field() }}--}}
+				{{--</form>--}}
+				{{--<br>--}}
+				{{--<br>--}}
 
 		</div>
 
