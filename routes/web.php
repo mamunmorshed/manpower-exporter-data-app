@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'HomeController@index');
 
 // Auth::routes();
-Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
-Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
-Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+//Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+//Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+//Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 
-Route::group(['middleware' => 'auth'],function(){
+//Route::group(['middleware' => 'auth'],function(){
 
     Route::get('/home', 'HomeController@index');
 
@@ -54,4 +55,4 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/agents/{id}/json', 'AgentController@showJSON');
 
 
-});
+//});

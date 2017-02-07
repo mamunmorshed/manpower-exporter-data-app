@@ -12,7 +12,9 @@
 	<nav class="navbar navbar-inverse bg-primary">
 		<div class="container-fluid">
 			<a href="{{ url('/home') }}" class="navbar-brand"><h1>{{ config('app.name', 'MANPOWER AGENCY') }}</h1></a>
-			<a href="{{ url('/home') }}"><span class="badge badge-warning float-right hidden-print">{{ session('totalNotification') }}</span></a>
+			@if(session('totalNotification'))
+				<a href="{{ url('/home') }}"><span class="badge badge-warning float-right hidden-print">{{ session('totalNotification') }}</span></a>
+			@endif
 
 		</div>
 	</nav>
@@ -44,14 +46,14 @@
 					<a href="{{ url('/agents/accounts') }}" class="list-group-item list-group-item-action">View All Accounts</a>
 				</div>
 			</div>
-				<br>
-				<br>
-				<form id="logout-form" action="{{ url('/logout') }}" method="POST">
-					<input type="submit" value="Logout" class="btn btn-outline-danger btn-logout">
-					{{ csrf_field() }}
-				</form>
-				<br>
-				<br>
+				{{--<br>--}}
+				{{--<br>--}}
+				{{--<form id="logout-form" action="{{ url('/logout') }}" method="POST">--}}
+					{{--<input type="submit" value="Logout" class="btn btn-outline-danger btn-logout">--}}
+					{{--{{ csrf_field() }}--}}
+				{{--</form>--}}
+				{{--<br>--}}
+				{{--<br>--}}
 
 		</div>
 
