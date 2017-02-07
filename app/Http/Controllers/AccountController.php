@@ -15,6 +15,8 @@ class AccountController extends Controller
 	
 	public function index(Request $req){
         if (trim($req->s)){
+            $data['agent'] = (new Agent())->where('sid', trim($req->s))->first();
+
             if (trim($req->from) && trim($req->to)){
                 $dateFilter = [['created_at', '>=', trim($req->from)],['created_at', '<=', (new Carbon(trim($req->to)))->addDay(1)]];
                 $data['accounts'] = Account::SearchByKeyword(trim($req->s))->where($dateFilter)->orderBy('id', 'desc')->paginate();

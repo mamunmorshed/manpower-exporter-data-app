@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+    @if($workers && count($workers) || $agents && count($agents))
 	<h2>Notifications</h2>
 	@if($workers && count($workers))
         <ul class="list-group">
@@ -20,6 +20,9 @@
                 <li class="list-group-item list-group-item-action">{{ $agent->agentName }} ({{ $agent->agent }}) has a payment due for the flight of {{ $agent->name }} ({{ $agent->sid }})  on {{ $agent->flight_date }}.</li>
             @endforeach
         </ul>
+    @endif
+    @else
+        <h2>No Notification</h2>
     @endif
 
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-			<div class="row">
+			<div class="row hidden-print">
 				<div class="col-md-6">
 					<h3>All Transactions</h3>
 				</div>
@@ -19,7 +19,10 @@
 					</form>
 				</div>
 			</div>
-			
+            @if(isset($agent))
+                <br>
+                <p class="display-title">{{ $agent->name }} ({{ $agent->sid }})</p>
+            @endif
 			<br>
 			@if(count($accounts))
 					<table class="table table-hover">
@@ -31,7 +34,7 @@
 					      <th>Compensation</th>
 					      <th>Advance</th>
 					      <th>Due</th>
-					      <th>Action</th>
+					      <th class="hidden-print">Action</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -43,7 +46,7 @@
 					      <td>{{ $account->compensation_amount }}</td>
 					      <td>{{ $account->advance_amount }}</td>
 					      <td>{{ $account->due_amount }}</td>
-					      <td>
+					      <td class="hidden-print">
 					      	<a href="{{ url('/agents/accounts/'.$account->id.'/view') }}" class="btn btn-sm btn-info">View</a>
 					      	<!-- <a href="{{ url('/agents/accounts/'.$account->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a> -->
 					      	<!-- <a href="#" class="btn btn-sm btn-success">Print</a> -->
@@ -53,11 +56,12 @@
 					    
 					  </tbody>
 					</table>
+                    <a href="#" class="btn btn-success hidden-print print float-right" data-printarea="full">Print</a>
             @else
 				<p class="lead text-danger">No Records Found.</p>
 			@endif
 
-		{{ $accounts->appends($_GET)->links() }}
+		<div class="hidden-print">{{ $accounts->appends($_GET)->links() }}</div>
 
 
 @endsection
