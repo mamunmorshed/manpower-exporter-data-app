@@ -60,12 +60,14 @@
 					    
 					  </tbody>
 					</table>
-                    <a href="#" class="btn btn-success hidden-print print" data-printarea="full">Print</a>
+                    <a href="#" class="btn btn-success hidden-print print float-right" data-printarea="full">Print</a>
             @else
 				<p class="lead text-danger">No Records Found.</p>
 			@endif
 
-		{{ $accounts->appends($_GET)->links() }}
+		<div class="hidden-print">
+            {{ $accounts->appends($_GET)->links() }}
+        </div>
 
 
 @endsection

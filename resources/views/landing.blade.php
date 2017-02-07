@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @if($workers && count($workers) || $agents && count($agents))
 	<h2>Notifications</h2>
 	@if($workers && count($workers))
         <ul class="list-group">
@@ -21,5 +22,9 @@
             @endforeach
         </ul>
     @endif
+    @else
+        <h2>No Notification</h2>
+    @endif
+
 
 @endsection

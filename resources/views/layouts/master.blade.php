@@ -12,7 +12,9 @@
 	<nav class="navbar navbar-inverse bg-primary">
 		<div class="container-fluid">
 			<a href="{{ url('/home') }}" class="navbar-brand"><h1>{{ config('app.name', 'MANPOWER AGENCY') }}</h1></a>
-			<a href="{{ url('/home') }}"><span class="badge badge-warning float-right hidden-print">{{ session('totalNotification') }}</span></a>
+			@if(session('totalNotification'))
+				<a href="{{ url('/home') }}"><span class="badge badge-warning float-right hidden-print">{{ session('totalNotification') }}</span></a>
+			@endif
 
 		</div>
 	</nav>
