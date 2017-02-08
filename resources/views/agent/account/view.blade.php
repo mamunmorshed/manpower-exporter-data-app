@@ -11,6 +11,10 @@
 					<td colspan="2">{{ $account->agent }}</td>
 				</tr>
 				<tr>
+					<td colspan="2">Agent Name</td>
+					<td colspan="2">{{ $account->accountAgent->name }}</td>
+				</tr>
+				<tr>
 					<td colspan="2">Commission</td>
 					<td colspan="2">{{ $account->commission }}</td>
 				</tr>

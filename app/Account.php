@@ -16,4 +16,9 @@ class Account extends Model
         }
         return $query;
     }
+
+    public function accountAgent()
+    {
+        return $this->belongsTo('App\Agent', 'agent', 'sid');
+    }
 }

@@ -64,8 +64,7 @@ class AccountController extends Controller
 	}
 	
 	public function view($id){
-		$data['account'] = (new Account())->where('id', $id)->first();
-
+		$data['account'] = (new Account())->with('accountAgent')->where('id', $id)->first();
 		return view('agent.account.view', $data);
 	}
 	
